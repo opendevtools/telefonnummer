@@ -1,0 +1,31 @@
+{
+  "name": "telefonnummer",
+  "version": "0.1.0",
+  "description": "Phone number formatter for Swedish phone numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/believer/telefonnummer.git"
+  },
+  "keywords": [
+    "Phone",
+    "Number",
+    "Parser",
+    "Swedish"
+  ],
+  "author": "Rickard Laurin <rickard.laurin@gmail.com> (http://rickardlaurin.se/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/believer/telefonnummer/issues"
+  },
+  "homepage": "https://github.com/believer/telefonnummer#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "eslint": "^1.10.3",
+    "mocha": "^2.3.3"
+  }
+}
