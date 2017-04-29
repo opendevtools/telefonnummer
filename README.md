@@ -1,6 +1,6 @@
 ## Telefonnummer
 
-_Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline.
+_Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format.
 
 ### Installation
 ```
