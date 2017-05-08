@@ -15,11 +15,18 @@ function curry(fn) {
  * Construct regex 
  */
 const makeRegex = curry((areaCode, firstDigits, type = 'long') => {
-  const regex = type === 'short'
-    ? `^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})$`
-    : `^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})(\\d{2})$`
-
-  return new RegExp(regex)
+  switch (type) {
+    case 'short':
+      return new RegExp(`^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})$`)
+    case 'tenDigit':
+      return new RegExp(
+        `^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{3})(\\d{2})$`
+      )
+    default:
+      return new RegExp(
+        `^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})(\\d{2})$`
+      )
+  }
 })
 
 /**
@@ -65,6 +72,10 @@ function areaCodeDigitCount(number) {
  * i.e. phoneNumberParser(0701234567) -> 070-123 45 67
  */
 function phoneNumberParser(number, separator = '-') {
+  if (!number) {
+    return ''
+  }
+
   const normalized = normalize(number)
   const areaCode = areaCodeDigitCount(normalized)
   const firstDigits = makeRegex(areaCode)
@@ -82,14 +93,19 @@ function phoneNumberParser(number, separator = '-') {
   if (normalized.length <= 4 && voicemail.includes(normalized)) {
     return 'Röstbrevlåda'
   }
+
   switch (areaCode) {
-    case 2: // Mobile phone numbers and Stockholm
-      return replacer(firstDigits(numberLength === 8 ? 2 : 3))
-    case 3: // Three digit area codes
+    case 2:
+      // Mobile phone numbers and Stockholm
+      const type = numberLength === 10 ? 'tenDigit' : 'long'
+      return replacer(firstDigits(numberLength === 8 ? 2 : 3, type))
+    case 3:
+      // Three digit area codes
       return numberLength === 8
         ? shortNumberParse
         : replacer(firstDigits(numberLength === 9 ? 2 : 3))
-    case 4: // Four digit area codes
+    case 4:
+      // Four digit area codes
       return numberLength === 9 ? shortNumberParse : replacer(firstDigits(2))
   }
 }
