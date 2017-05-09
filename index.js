@@ -14,7 +14,7 @@ function curry(fn) {
 /**
  * Construct regex 
  */
-const makeRegex = curry((areaCode, firstDigits, type = 'long') => {
+const makeRegex = curry(function (areaCode, firstDigits, type = 'long') {
   switch (type) {
     case 'short':
       return new RegExp(`^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})$`)
@@ -32,16 +32,16 @@ const makeRegex = curry((areaCode, firstDigits, type = 'long') => {
 /**
  * Number replacer
  */
-const numberReplace = curry((number, numberParse, regexReplace) =>
-  number.replace(regexReplace, numberParse)
-)
+const numberReplace = curry(function (number, numberParse, regexReplace) {
+  return number.replace(regexReplace, numberParse)
+})
 
 /**
  * Normalize phone number by removing everything
  * that is not a number
  * @param {string} number
  */
-const normalize = number => {
+const normalize = function (number) {
   number = number.toString().replace('(0)', '').replace(/\D+/gi, '')
   return number.substr(0, 2) === '46' ? `0${number.substr(2)}` : number
 }
@@ -109,4 +109,5 @@ function phoneNumberParser(number, separator = '-') {
       return numberLength === 9 ? shortNumberParse : replacer(firstDigits(2))
   }
 }
+
 module.exports = phoneNumberParser
