@@ -9,11 +9,13 @@ describe('#phoneNumberParser', () => {
 
   it('parses voicemail', () => {
     expect(phoneNumberParser('46888')).to.eql('Röstbrevlåda')
+    expect(phoneNumberParser('46888')).to.eql('Röstbrevlåda')
     expect(phoneNumberParser('46333')).to.eql('Röstbrevlåda')
-    expect(phoneNumberParser('46222')).to.eql('Röstbrevlåda')
+    expect(phoneNumberParser('46147')).to.eql('Röstbrevlåda')
     expect(phoneNumberParser('888')).to.eql('Röstbrevlåda')
     expect(phoneNumberParser('333')).to.eql('Röstbrevlåda')
     expect(phoneNumberParser('222')).to.eql('Röstbrevlåda')
+    expect(phoneNumberParser('147')).to.eql('Röstbrevlåda')
   })
 
   it('handles non strings', () => {

@@ -3,7 +3,8 @@ function curry(fn) {
   return (function resolver() {
     var memory = Array.prototype.slice.call(arguments)
     return function() {
-      var local = memory.slice(), next
+      var local = memory.slice(),
+        next
       Array.prototype.push.apply(local, arguments)
       next = local.length >= arity ? fn : resolver
       return next.apply(null, local)
@@ -14,7 +15,7 @@ function curry(fn) {
 /**
  * Construct regex 
  */
-const makeRegex = curry(function (areaCode, firstDigits, type = 'long') {
+const makeRegex = curry(function(areaCode, firstDigits, type = 'long') {
   switch (type) {
     case 'short':
       return new RegExp(`^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})$`)
@@ -32,7 +33,7 @@ const makeRegex = curry(function (areaCode, firstDigits, type = 'long') {
 /**
  * Number replacer
  */
-const numberReplace = curry(function (number, numberParse, regexReplace) {
+const numberReplace = curry(function(number, numberParse, regexReplace) {
   return number.replace(regexReplace, numberParse)
 })
 
@@ -41,7 +42,7 @@ const numberReplace = curry(function (number, numberParse, regexReplace) {
  * that is not a number
  * @param {string} number
  */
-const normalize = function (number) {
+const normalize = function(number) {
   number = number.toString().replace('(0)', '').replace(/\D+/gi, '')
   return number.substr(0, 2) === '46' ? `0${number.substr(2)}` : number
 }
@@ -87,7 +88,10 @@ function phoneNumberParser(number, separator = '-') {
   )
   const numberLength = normalized.length
 
-  const voicemail = ['222', '333', '888', '0222', '0333', '0888']
+  const voicemail = ['147', '222', '333', '888'].reduce(
+    (p, c) => p.concat([c, '0' + c]),
+    []
+  )
 
   // Voicemail
   if (normalized.length <= 4 && voicemail.includes(normalized)) {
