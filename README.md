@@ -4,12 +4,19 @@ _Telefonnummer_ is phone number in Swedish. This package formats all Swedish pho
 
 ### Installation
 ```
-npm install telefonnummer --save
+yarn add telefonnummer
 ```
 
 ### Usage
+```js
+telefonnummer(number: string, separator?: string): string
 ```
-const telefonnummer = require('telefonnummer')
+
+Take a phone number string and return the parsed value.
+
+#### Example
+```js
+import telefonnummer from 'telefonnummer'
 
 telefonnummer('222') // Röstbrevlåda
 telefonnummer('0701234567') // 070-123 45 67
@@ -19,7 +26,7 @@ telefonnummer('050012345') // 0500-123 45
 ```
 
 #### With a custom separtor
-```
+```js
 telefonnummer('0701234567', ':') // 070:123 45 67
 ```
 
