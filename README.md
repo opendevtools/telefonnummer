@@ -1,5 +1,10 @@
 ## Telefonnummer
 
+[![npm version](https://badge.fury.io/js/telefonnummer.svg)](https://badge.fury.io/js/telefonnummer)
+[![Build Status](https://travis-ci.org/believer/telefonnummer.png?branch=master)](https://travis-ci.org/believer/telefonnummer)
+[![Code Climate](https://codeclimate.com/github/believer/telefonnummer/badges/gpa.svg)](https://codeclimate.com/github/believer/telefonnummer)
+[![Test Coverage](https://codeclimate.com/github/believer/telefonnummer/badges/coverage.svg)](https://codeclimate.com/github/believer/telefonnummer/coverage)
+
 _Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format.
 
 ### Installation
