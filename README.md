@@ -61,6 +61,7 @@ Returns the numbering area for a provided area code or phone number. Also handle
 import { numberingArea } from 'telefonnummer'
 
 numberingArea('0977-123 45') // Korpilombolo
+numberingArea('081234567') // Stockholm
 numberingArea('08') // Stockholm
 numberingArea('031') // Göteborg
 numberingArea(8) // Stockholm
