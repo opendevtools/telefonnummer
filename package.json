@@ -2,7 +2,7 @@
   "name": "telefonnummer",
   "version": "0.3.0",
   "description": "Phone number formatter for Swedish phone numbers",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint index.js clearingNumbers.js ./test/**/*.js",
     "test": "./node_modules/.bin/mocha",

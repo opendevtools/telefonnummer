@@ -1,5 +1,5 @@
 const { expect } = require('chai')
-const phoneNumberParser = require('../index')
+const phoneNumberParser = require('../lib/parser')
 
 describe('#phoneNumberParser', () => {
   it('handles null values', () => {
