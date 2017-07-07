@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/believer/telefonnummer/badges/gpa.svg)](https://codeclimate.com/github/believer/telefonnummer)
 [![Test Coverage](https://codeclimate.com/github/believer/telefonnummer/badges/coverage.svg)](https://codeclimate.com/github/believer/telefonnummer/coverage)
 
-_Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format.
+_Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format. Area code information is provided by [Post- och telestyrelsen (PTS)](https://www.pts.se/upload/Faktablad/SE/2011/faktablad-riktnummer-nummerordning-pts-f-211_2.pdf).
 
 ### Installation
 ```
@@ -17,7 +17,7 @@ yarn add telefonnummer
 parse(number: string, separator?: string): string
 ```
 
-Take a phone number string and return the parsed value. Parser is also default export of package, but might be removed as default in the future.
+Take a phone number and return a parsed version of the number. Parser is also default export of package, but might be removed as default in the future.
 
 #### Example
 ```js
@@ -60,10 +60,30 @@ Returns the numbering area for a provided area code or phone number. Also handle
 ```js
 import { numberingArea } from 'telefonnummer'
 
+numberingArea('0977-123 45') // Korpilombolo
 numberingArea('08') // Stockholm
 numberingArea('031') // Göteborg
-numberingArea('0977-123 45') // Korpilombolo
 numberingArea(8) // Stockholm
+```
+
+### Area codes
+```js
+areaCodes(): string[]
+```
+
+Returns a number sorted array of all the area codes.
+
+#### Example
+```js
+import { areaCodes } from 'telefonnummer'
+
+areaCodes()
+//  [
+//    '011 Norrköping',
+//    '0120 Åtvidaberg',
+//    '0121 Söderköping',
+//    ....
+//  ]
 ```
 
 
