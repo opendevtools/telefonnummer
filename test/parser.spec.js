@@ -29,8 +29,8 @@ describe('#phoneNumberParser', () => {
   })
 
   it('parses landline numbers with 2 number area codes', () => {
-    expect(phoneNumberParser('4687391701')).to.eql('08-739 17 01')
-    expect(phoneNumberParser('087391701')).to.eql('08-739 17 01')
+    expect(phoneNumberParser('4681234567')).to.eql('08-123 45 67')
+    expect(phoneNumberParser('081234567')).to.eql('08-123 45 67')
     expect(phoneNumberParser('468123456')).to.eql('08-12 34 56')
     expect(phoneNumberParser('08123456')).to.eql('08-12 34 56')
   })

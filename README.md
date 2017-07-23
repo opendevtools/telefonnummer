@@ -14,7 +14,7 @@ yarn add telefonnummer
 
 ### Parse
 ```js
-parse(number: string, separator?: string): string
+parse(phoneNumber: string, separator?: string): string
 ```
 
 Take a phone number and return a parsed version of the number. Parser is also default export of package, but might be removed as default in the future.
@@ -67,6 +67,22 @@ numberingArea('031') // Göteborg
 numberingArea(8) // Stockholm
 ```
 
+### Validate
+```js
+validate(phoneNumber: string): boolean
+```
+
+Validate both mobile and landline numbers.
+
+#### Example
+```js
+import { validate } from 'telefonnummer'
+
+validate('0977-123 45') // true
+validate('081234567') // true
+validate('050012123456') // false
+```
+
 ### Area codes
 ```js
 areaCodes(): string[]
@@ -90,5 +106,5 @@ areaCodes()
 
 ### Tests
 ```
-npm test
+yarn test
 ```
