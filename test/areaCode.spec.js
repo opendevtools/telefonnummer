@@ -1,20 +1,19 @@
-const { expect } = require('chai')
 const areaCode = require('../lib/areaCode')
 
 describe('#areaCode', () => {
   it('returns empty string if nothing is provided', () => {
-    expect(areaCode()).to.eql('')
+    expect(areaCode()).toEqual('')
   })
 
   it('returns empty string if nothing is found', () => {
-    expect(areaCode('nonExistant')).to.eql('')
+    expect(areaCode('nonExistant')).toEqual('')
   })
 
   it('returns area code for area', () => {
-    expect(areaCode('Stockholm')).to.eql('08')
+    expect(areaCode('Stockholm')).toEqual('08')
   })
 
   it('returns area code for a more complex area', () => {
-    expect(areaCode('Mjölby')).to.eql('0142')
+    expect(areaCode('Mjölby')).toEqual('0142')
   })
 })
