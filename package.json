@@ -4,7 +4,7 @@
   "description": "Phone number formatter for Swedish phone numbers",
   "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint index.js clearingNumbers.js ./test/**/*.js",
+    "lint": "eslint index.js ./lib/**/*.js ./test/**/*.js",
     "test": "jest",
     "coverage": "npm test -- --coverage"
   },
