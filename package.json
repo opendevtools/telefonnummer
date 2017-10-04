@@ -2,11 +2,13 @@
   "name": "telefonnummer",
   "version": "0.5.1",
   "description": "Phone number formatter for Swedish phone numbers",
-  "main": "lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "lint": "eslint index.js ./lib/**/*.js ./test/**/*.js",
     "test": "jest",
-    "coverage": "npm test -- --coverage"
+    "coverage": "npm test -- --coverage",
+    "build": "babel lib --out-dir dist",
+    "prepublish": "npm test && npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,10 @@
     "Telefonnummer",
     "Sverige"
   ],
-  "author": "Rickard Laurin <rickard.laurin@gmail.com> (http://rickardlaurin.se/)",
+  "author": {
+    "name": "Rickard Laurin",
+    "email": "rickard.laurin@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/believer/telefonnummer/issues"
@@ -28,8 +33,11 @@
   "homepage": "https://github.com/believer/telefonnummer#readme",
   "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
     "eslint": "^1.10.3",
-    "jest": "^20.0.4"
+    "jest": "^20.0.4",
+    "jest-cli": "^21.2.1"
   }
 }
