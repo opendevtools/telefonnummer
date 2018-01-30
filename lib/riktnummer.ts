@@ -1,4 +1,4 @@
-module.exports = [
+const RIKTNUMMER = [
   '011 Norrköping',
   '0120 Åtvidaberg',
   '0121 Söderköping',
@@ -262,5 +262,18 @@ module.exports = [
   '0977 Korpilombolo',
   '0978 Pajala',
   '0980 Kiruna',
-  '0981 Vittangi'
+  '0981 Vittangi',
 ]
+
+export const findByMatch = (phoneNumber: string, matches: RegExp): string => {
+  const area = RIKTNUMMER.filter(r => r.indexOf(phoneNumber) > -1)
+  return area.length > 0 ? area[0].match(matches)[0].trim() : ''
+}
+
+export const findMatchingAreaCode = (phoneNumber: string): string =>
+  findByMatch(phoneNumber, /\D+/g)
+
+export const findMatchingAreaName = (phoneNumber: string): string =>
+  findByMatch(phoneNumber, /\d+/g)
+
+export default RIKTNUMMER
