@@ -10,7 +10,7 @@ _Telefonnummer_ is phone number in Swedish. This package formats all Swedish pho
 
 ### Installation
 ```
-yarn add telefonnummer
+npm install telefonnummer --save
 ```
 
 ### Parse
@@ -106,5 +106,5 @@ areaCodes()
 
 ### Tests
 ```
-yarn test
+npm test
 ```
