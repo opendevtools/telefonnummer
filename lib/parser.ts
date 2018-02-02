@@ -1,32 +1,7 @@
 import areaCodeDigitCount from './utils/areaCodeDigitCount'
+import makeRegex from './utils/makeRegex'
 import normalize from './utils/normalize'
-
-/**
- * Construct regex
- */
-const makeRegex = areaCode => firstDigits => type => {
-  const regexType = type || 'long'
-
-  switch (regexType) {
-    case 'short':
-      return new RegExp(`^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})$`)
-    case 'tenDigit':
-      return new RegExp(
-        `^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{3})(\\d{2})$`,
-      )
-    default:
-      return new RegExp(
-        `^(\\d{${areaCode}})(\\d{${firstDigits}})(\\d{2})(\\d{2})$`,
-      )
-  }
-}
-
-/**
- * Number replacer
- */
-const numberReplace = phoneNumber => numberParse => regexReplace => {
-  return phoneNumber.replace(regexReplace, numberParse)
-}
+import numberReplace from './utils/numberReplace'
 
 /**
  * Parse phone numbers

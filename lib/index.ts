@@ -1,10 +1,9 @@
-import areaCodeOriginal from './areaCode'
 import numberingAreaOriginal from './numberingArea'
 import parseOriginal from './parser'
-import riktnummerOriginal from './riktnummer'
+import riktnummerOriginal, { findMatchingAreaName } from './riktnummer'
 import validatorOriginal from './validator'
 
-export const areaCode = areaCodeOriginal
+export const areaCode = findMatchingAreaName
 export const riktnummer = riktnummerOriginal
 export const numberingArea = numberingAreaOriginal
 export const parse = parseOriginal

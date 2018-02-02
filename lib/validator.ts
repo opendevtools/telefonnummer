@@ -13,10 +13,6 @@ const findNumbersByLength = (digits: number, trailingDigits: number) => {
 }
 
 const validator = (phoneNumber: string): boolean => {
-  if (!phoneNumber) {
-    return false
-  }
-
   const normalized = normalize(phoneNumber)
   const areaCodeDigits = areaCodeDigitCount(normalized)
 

@@ -2,10 +2,6 @@ import parser from './parser'
 import { findMatchingAreaCode } from './riktnummer'
 
 const numberingArea = (phoneNumber: string | number): string => {
-  if (!phoneNumber) {
-    return ''
-  }
-
   let phoneNumberString = phoneNumber.toString()
 
   if (phoneNumberString.length > 4) {
