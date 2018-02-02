@@ -1,6 +1,6 @@
 {
   "name": "telefonnummer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Phone number formatter for Swedish phone numbers",
   "main": "./dist/index.js",
   "scripts": {
