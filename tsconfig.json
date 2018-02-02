@@ -4,7 +4,8 @@
     "removeComments": true,
     "allowJs": true,
     "target": "es5",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "lib": ["es7"]
   },
   "include": ["./lib/**/*"],
   "exclude": ["./lib/**/__tests__/*"]

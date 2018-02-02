@@ -6,7 +6,6 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'lib/**/*.{ts,tsx}'",
     "lint:js": "eslint index.js ./lib/**/*.js ./test/**/*.js",
-    "pretest": "npm run lint",
     "test": "jest",
     "test:dev": "jest --watch",
     "coverage": "npm test -- --coverage",
@@ -34,10 +33,7 @@
     "url": "https://github.com/believer/telefonnummer/issues"
   },
   "homepage": "https://github.com/believer/telefonnummer#readme",
-  "dependencies": {
-    "ntypescript": "1.201706190042.1",
-    "typescript": "2.6.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "22.1.1",
     "babel-eslint": "8.2.1",
@@ -45,7 +41,10 @@
     "babel-preset-env": "^1.6.1",
     "eslint": "4.16.0",
     "jest": "22.1.4",
-    "ts-jest": "22.0.2"
+    "ntypescript": "1.201706190042.1",
+    "ts-jest": "22.0.2",
+    "tslint": "^5.9.1",
+    "typescript": "2.6.2"
   },
   "jest": {
     "moduleFileExtensions": [

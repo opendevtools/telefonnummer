@@ -1,8 +1,8 @@
 import phoneNumberParser from '../parser'
 
 const parserHelper = (numbers, expected) => {
-  numbers.forEach(number => {
-    expect(phoneNumberParser(number)).toEqual(expected)
+  numbers.forEach(phoneNumber => {
+    expect(phoneNumberParser(phoneNumber)).toEqual(expected)
   })
 }
 

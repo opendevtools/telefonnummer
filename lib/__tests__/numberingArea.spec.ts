@@ -1,10 +1,6 @@
 import numberingArea from '../numberingArea'
 
 describe('#numberingArea', () => {
-  it('returns empty string if nothing is provided', () => {
-    expect(numberingArea()).toEqual('')
-  })
-
   it('returns empty string if nothing is found', () => {
     expect(numberingArea('1234')).toEqual('')
   })
@@ -22,7 +18,7 @@ describe('#numberingArea', () => {
     expect(numberingArea(142)).toEqual('Mjölby-Skänninge-Boxholm')
   })
 
-  fit('if provided a real phonenumber finds the area', () => {
+  it('if provided a real phonenumber finds the area', () => {
     expect(numberingArea('081234567')).toEqual('Stockholm')
     expect(numberingArea('031124567')).toEqual('Göteborg')
     expect(numberingArea('0977-123 45')).toEqual('Korpilombolo')

@@ -23,7 +23,6 @@ Take a phone number and return a parsed version of the number. Parser is also de
 #### Example
 ```js
 import { parse } from 'telefonnummer'
-// OR import telefonnummer from 'telefonnummer'
 
 parse('222') // Röstbrevlåda (Voicemail in Swedish)
 parse('0701234567') // 070-123 45 67
