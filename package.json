@@ -4,10 +4,12 @@
   "description": "Phone number formatter for Swedish phone numbers",
   "main": "./dist/index.js",
   "scripts": {
-    "lint": "eslint index.js ./lib/**/*.js ./test/**/*.js",
+    "lint": "tslint -c tslint.json 'lib/**/*.{ts,tsx}'",
+    "lint:js": "eslint index.js ./lib/**/*.js ./test/**/*.js",
     "test": "jest",
+    "test:dev": "jest --watch",
     "coverage": "npm test -- --coverage",
-    "build": "babel lib --out-dir dist",
+    "build": "ntsc",
     "prepublish": "npm test && npm run lint && npm run build"
   },
   "repository": {
@@ -33,11 +35,29 @@
   "homepage": "https://github.com/believer/telefonnummer#readme",
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^7.2.3",
-    "babel-preset-env": "^1.6.0",
-    "eslint": "^1.10.3",
-    "jest": "^20.0.4",
-    "jest-cli": "^21.2.1"
+    "@types/jest": "22.1.1",
+    "babel-eslint": "8.2.1",
+    "babel-jest": "^22.1.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "4.16.0",
+    "jest": "22.1.4",
+    "ntypescript": "1.201706190042.1",
+    "ts-jest": "22.0.2",
+    "tslint": "^5.9.1",
+    "typescript": "2.6.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
   }
 }

@@ -8,16 +8,15 @@
     "node": true
   },
   "rules": {
-    "quotes": [2, "single"],
-    "strict": [1, "never"],
-    "semi": [2, "never"],
-    "prefer-const": 2,
-    "no-unexpected-multiline": 2,
-    "comma-dangle": [2, "never"],
-    "object-curly-spacing": [2, "always"],
-    "comma-spacing": 2,
-    "no-unused-vars": 2,
-    "quote-props": [2, "as-needed"],
-    "indent": [2, 2, { "SwitchCase": 1 }]
+    "space-before-function-paren": ["error", "always"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "prefer-const": "error",
+    "no-unexpected-multiline": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "object-curly-spacing": ["error", "always"],
+    "comma-spacing": "error",
+    "no-unused-vars": "error",
+    "quote-props": ["error", "as-needed"]
   }
 }

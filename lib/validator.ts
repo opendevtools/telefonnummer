@@ -1,18 +1,18 @@
-const areaCodeDigitCount = require('./utils/areaCodeDigitCount')
-const normalize = require('./utils/normalize')
-const riktnummer = require('./riktnummer')
+import riktnummer from './riktnummer'
+import areaCodeDigitCount from './utils/areaCodeDigitCount'
+import normalize from './utils/normalize'
 
-function findNumbersByLength(digits, trailingDigits) {
+const findNumbersByLength = (digits: number, trailingDigits: number) => {
   const areaCodes = riktnummer
-    .map(number => parseInt(number, 10))
-    .map(number => `0${number.toString()}`)
-    .filter(number => number.length === digits)
+    .map(phoneNumber => parseInt(phoneNumber, 10))
+    .map(phoneNumber => `0${phoneNumber.toString()}`)
+    .filter(phoneNumber => phoneNumber.length === digits)
     .join('|')
 
   return new RegExp(`^(${areaCodes})\\d{5,${trailingDigits}}$`)
 }
 
-function validator(phoneNumber) {
+const validator = (phoneNumber: string): boolean => {
   if (!phoneNumber) {
     return false
   }
@@ -34,4 +34,4 @@ function validator(phoneNumber) {
   }
 }
 
-module.exports = validator
+export default validator

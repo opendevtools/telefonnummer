@@ -1,10 +1,6 @@
-const numberingArea = require('../lib/numberingArea')
+import numberingArea from '../numberingArea'
 
 describe('#numberingArea', () => {
-  it('returns empty string if nothing is provided', () => {
-    expect(numberingArea()).toEqual('')
-  })
-
   it('returns empty string if nothing is found', () => {
     expect(numberingArea('1234')).toEqual('')
   })
