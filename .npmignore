@@ -2,3 +2,8 @@ coverage
 lib
 tsconfig.json
 tslint.json
+
+.babelrc
+.codeclimate.yml
+.eslintrc
+.travis.tml
