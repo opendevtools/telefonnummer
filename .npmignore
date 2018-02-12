@@ -6,4 +6,4 @@ tslint.json
 .babelrc
 .codeclimate.yml
 .eslintrc
-.travis.tml
+.travis.yml
