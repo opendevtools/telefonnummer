@@ -1,1 +1,4 @@
+coverage
 lib
+tsconfig.json
+tslint.json
