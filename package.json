@@ -1,6 +1,6 @@
 {
   "name": "telefonnummer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Phone number formatter for Swedish phone numbers",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -47,11 +47,17 @@
     "typescript": "2.6.2"
   },
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["**/__tests__/*.(ts|tsx|js)"]
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
   }
 }
