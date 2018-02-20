@@ -3,13 +3,14 @@
   "version": "1.0.5",
   "description": "Phone number formatter for Swedish phone numbers",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "lint": "tslint -c tslint.json 'lib/**/*.{ts,tsx}'",
     "lint:js": "eslint index.js ./lib/**/*.js ./test/**/*.js",
     "test": "jest",
     "test:dev": "jest --watch",
     "coverage": "npm test -- --coverage",
-    "build": "tsc",
+    "build": "tsc --declaration",
     "prepare": "npm test && npm run lint && npm run build"
   },
   "repository": {
@@ -46,17 +47,11 @@
     "typescript": "2.6.2"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/__tests__/*.(ts|tsx|js)"
-    ]
+    "testMatch": ["**/__tests__/*.(ts|tsx|js)"]
   }
 }
