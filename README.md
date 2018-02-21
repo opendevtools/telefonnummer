@@ -120,7 +120,7 @@ areaCodes()
 normalize(string): string
 ```
 
-Clean up any non digits and country codes from phone number.
+Clean up any non-digits and country codes from phone number.
 
 #### Example
 
