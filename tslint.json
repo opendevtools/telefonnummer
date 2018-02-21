@@ -10,7 +10,9 @@
     "quotemark": [true, "single"],
     "semicolon": [true, "never"],
     "space-before-function-paren": [true, "always"],
-    "trailing-comma": [true, { "multiline": "always" }]
+    "trailing-comma": {
+      "options": { "multiline": "always", "singleline": "never" }
+    }
   },
   "rulesDirectory": []
 }

@@ -9,11 +9,13 @@
 _Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format. Area code information is provided by [Post- och telestyrelsen (PTS)](https://www.pts.se/upload/Faktablad/SE/2011/faktablad-riktnummer-nummerordning-pts-f-211_2.pdf).
 
 ### Installation
+
 ```
 npm install telefonnummer --save
 ```
 
 ### Parse
+
 ```js
 parse(phoneNumber: string, separator?: string): string
 ```
@@ -21,6 +23,7 @@ parse(phoneNumber: string, separator?: string): string
 Take a phone number and return a parsed version of the number. Parser is also default export of package, but might be removed as default in the future.
 
 #### Example
+
 ```js
 import { parse } from 'telefonnummer'
 
@@ -35,6 +38,7 @@ parse('0701234567', ':') // 070:123 45 67
 ```
 
 ### Area code
+
 ```js
 areaCode(area: string): string
 ```
@@ -42,6 +46,7 @@ areaCode(area: string): string
 Returns the area code of the provided city
 
 #### Example
+
 ```js
 import { areaCode } from 'telefonnummer'
 
@@ -50,6 +55,7 @@ areaCode('Korpilombolo') // 0977
 ```
 
 ### Numbering area
+
 ```js
 numberingArea(areaCode: string | number): string
 ```
@@ -57,6 +63,7 @@ numberingArea(areaCode: string | number): string
 Returns the numbering area for a provided area code or phone number. Also handles numbers without leading zero.
 
 #### Example
+
 ```js
 import { numberingArea } from 'telefonnummer'
 
@@ -68,6 +75,7 @@ numberingArea(8) // Stockholm
 ```
 
 ### Validate
+
 ```js
 validate(phoneNumber: string): boolean
 ```
@@ -75,6 +83,7 @@ validate(phoneNumber: string): boolean
 Validate both mobile and landline numbers.
 
 #### Example
+
 ```js
 import { validate } from 'telefonnummer'
 
@@ -84,6 +93,7 @@ validate('050012123456') // false
 ```
 
 ### Area codes
+
 ```js
 areaCodes(): string[]
 ```
@@ -91,6 +101,7 @@ areaCodes(): string[]
 Returns a number sorted array of all the area codes.
 
 #### Example
+
 ```js
 import { areaCodes } from 'telefonnummer'
 
@@ -103,8 +114,42 @@ areaCodes()
 //  ]
 ```
 
+### Normalize
+
+```js
+normalize(string): string
+```
+
+Clean up any non digits and country codes from phone number.
+
+#### Example
+
+```js
+import { normalize } from 'telefonnummer'
+
+normalize('070-123.45x67') // 0701234567
+normalize('+46701234567') // 0701234567
+```
+
+### AreEqual
+
+```js
+areEqual(string, string): boolean
+```
+
+Cleans up provided strings and checks if the two phone number values match.
+
+#### Example
+
+```js
+import { areEqual } from 'telefonnummer'
+
+areEqual('0701234567', '0701234567') // true
+areEqual('070-123.45 67', '070123--45 67') // true
+```
 
 ### Tests
+
 ```
 npm test
 ```

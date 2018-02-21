@@ -3,14 +3,10 @@ import makeRegex from './utils/makeRegex'
 import normalize from './utils/normalize'
 import numberReplace from './utils/numberReplace'
 
-/**
- * Parse phone numbers
- * @param {string} number - Phone number
- * @return {string} - Parsed phone number
- *
- * i.e. phoneNumberParser(0701234567) -> 070-123 45 67
- */
-const phoneNumberParser = (phoneNumber, separator = '-') => {
+const phoneNumberParser = (
+  phoneNumber: string,
+  separator: string = '-',
+): string => {
   if (!phoneNumber) {
     return ''
   }
