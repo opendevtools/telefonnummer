@@ -74,22 +74,22 @@ numberingArea('031') // Göteborg
 numberingArea(8) // Stockholm
 ```
 
-### Validate
+### Validator
 
 ```js
-validate(phoneNumber: string): boolean
+validator(phoneNumber: string): boolean
 ```
 
-Validate both mobile and landline numbers.
+Validates both mobile and landline numbers.
 
 #### Example
 
 ```js
-import { validate } from 'telefonnummer'
+import { validator } from 'telefonnummer'
 
-validate('0977-123 45') // true
-validate('081234567') // true
-validate('050012123456') // false
+validator('0977-123 45') // true
+validator('081234567') // true
+validator('050012123456') // false
 ```
 
 ### Area codes
