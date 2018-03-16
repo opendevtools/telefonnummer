@@ -266,14 +266,14 @@ const RIKTNUMMER = [
 ]
 
 export const findByMatch = (phoneNumber: string, matches: RegExp): string => {
-  const area = RIKTNUMMER.filter(r => r.indexOf(phoneNumber) > -1)
+  const area = RIKTNUMMER.filter(r => r.toLowerCase().indexOf(phoneNumber) > -1)
   return area.length > 0 ? area[0].match(matches)[0].trim() : ''
 }
 
 export const findMatchingAreaCode = (phoneNumber: string): string =>
   findByMatch(phoneNumber, /\D+/g)
 
-export const findMatchingAreaName = (phoneNumber: string): string =>
-  findByMatch(phoneNumber, /\d+/g)
+export const findMatchingAreaName = (areaName: string): string =>
+  findByMatch(areaName.toLowerCase(), /\d+/g)
 
 export default RIKTNUMMER
