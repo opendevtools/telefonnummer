@@ -12,7 +12,11 @@
     "test:dev": "jest --watch",
     "coverage": "npm test -- --coverage",
     "build": "tsc --declaration",
-    "prepare": "npm test && npm run lint && npm run build"
+    "prepare": "npm test && npm run lint && npm run build",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": ["prettier --write", "tslint --fix", "git add"]
   },
   "repository": {
     "type": "git",
@@ -42,23 +46,20 @@
     "babel-jest": "^22.1.0",
     "babel-preset-env": "^1.6.1",
     "eslint": "4.16.0",
+    "husky": "^0.14.3",
     "jest": "22.1.4",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
     "ts-jest": "22.0.2",
     "tslint": "^5.9.1",
     "typescript": "2.6.2"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/__tests__/*.(ts|tsx|js)"
-    ]
+    "testMatch": ["**/__tests__/*.(ts|tsx|js)"]
   }
 }
