@@ -16,7 +16,11 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.ts": ["prettier --write", "tslint --fix", "git add"]
+    "*.ts": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -55,11 +59,17 @@
     "typescript": "2.6.2"
   },
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["**/__tests__/*.(ts|tsx|js)"]
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
   }
 }
