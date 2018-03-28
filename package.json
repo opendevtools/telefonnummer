@@ -45,7 +45,7 @@
   "homepage": "https://github.com/believer/telefonnummer#readme",
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "22.1.1",
+    "@types/jest": "22.2.2",
     "babel-eslint": "8.2.1",
     "babel-jest": "22.1.0",
     "babel-preset-env": "1.6.1",
