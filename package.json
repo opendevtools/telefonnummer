@@ -7,7 +7,6 @@
   "scripts": {
     "start": "tsc -w",
     "lint": "tslint -c tslint.json 'lib/**/*.{ts,tsx}'",
-    "lint:js": "eslint index.js ./lib/**/*.js ./test/**/*.js",
     "test": "jest",
     "test:dev": "jest --watch",
     "coverage": "npm test -- --coverage",
