@@ -153,3 +153,15 @@ areEqual('070-123.45 67', '070123--45 67') // true
 ```
 npm test
 ```
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars1.githubusercontent.com/u/1478102?v=4" width="100px;"/><br /><sub><b>Rickard Laurin</b></sub>](http://willcodefor.beer/)<br />[🐛](https://github.com/Rickard Laurin/telefonnummer/issues?q=author%3Abeliever "Bug reports") [💻](https://github.com/Rickard Laurin/telefonnummer/commits?author=believer "Code") [📖](https://github.com/Rickard Laurin/telefonnummer/commits?author=believer "Documentation") [👀](#review-believer "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/8521353?v=4" width="100px;"/><br /><sub><b>Jimmy Jardland</b></sub>](http://pokechecked.com)<br />[📖](https://github.com/Rickard Laurin/telefonnummer/commits?author=Jimjardland "Documentation") |
+| :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

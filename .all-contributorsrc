@@ -1,0 +1,34 @@
+{
+  "projectName": "telefonnummer",
+  "projectOwner": "Rickard Laurin",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "believer",
+      "name": "Rickard Laurin",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1478102?v=4",
+      "profile": "http://willcodefor.beer/",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "Jimjardland",
+      "name": "Jimmy Jardland",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8521353?v=4",
+      "profile": "http://pokechecked.com",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ]
+}
