@@ -53,7 +53,5 @@ export const phoneNumberParser = (
       return numberLength === 9
         ? shortNumberParse
         : replacer(firstDigits(2)('long'), options)
-    default:
-      return ''
   }
 }
