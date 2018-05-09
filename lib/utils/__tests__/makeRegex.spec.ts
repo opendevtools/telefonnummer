@@ -1,4 +1,4 @@
-import makeRegex from '../makeRegex'
+import { makeRegex } from '../makeRegex'
 
 describe('#makeRegex', () => {
   it('handles undefined type (long implicitly)', () => {

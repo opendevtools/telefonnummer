@@ -1,4 +1,4 @@
-import numberReplace from '../numberReplace'
+import { numberReplace } from '../numberReplace'
 
 describe('#numberReplace', () => {
   it('handles undefined type (long implicitly)', () => {

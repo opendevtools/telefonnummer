@@ -1,4 +1,4 @@
-const makeRegex = (areaCode: number) => (firstDigits: number) => (
+export const makeRegex = (areaCode: number) => (firstDigits: number) => (
   type: string = 'long',
 ): RegExp => {
   switch (type) {
@@ -14,5 +14,3 @@ const makeRegex = (areaCode: number) => (firstDigits: number) => (
       )
   }
 }
-
-export default makeRegex

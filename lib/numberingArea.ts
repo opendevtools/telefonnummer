@@ -1,13 +1,13 @@
-import parser from './parser'
+import { phoneNumberParser } from './parser'
 import { findMatchingAreaCode } from './riktnummer'
 
-const numberingArea = (phoneNumber: string | number): string => {
+export const numberingArea = (phoneNumber: string | number): string => {
   let phoneNumberString = phoneNumber.toString()
 
   if (phoneNumberString.length > 4) {
-    const parsed = parser(phoneNumberString).match(/^\d+/)
+    const parsed = phoneNumberParser(phoneNumberString).match(/^\d+/)
 
-    if (parsed.length && parsed[0].length <= 4) {
+    if (parsed && parsed.length && parsed[0].length <= 4) {
       phoneNumberString = parsed[0]
     }
   }
@@ -18,5 +18,3 @@ const numberingArea = (phoneNumber: string | number): string => {
 
   return findMatchingAreaCode(phoneNumberString)
 }
-
-export default numberingArea

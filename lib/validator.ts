@@ -1,10 +1,9 @@
-import riktnummer from './riktnummer'
-import areaCodeDigitCount from './utils/areaCodeDigitCount'
-import normalize from './utils/normalize'
+import { RIKTNUMMER } from './riktnummer'
+import { areaCodeDigitCount } from './utils/areaCodeDigitCount'
+import { normalize } from './utils/normalize'
 
 const findNumbersByLength = (digits: number, trailingDigits: number) => {
-  const areaCodes = riktnummer
-    .map(phoneNumber => parseInt(phoneNumber, 10))
+  const areaCodes = RIKTNUMMER.map(phoneNumber => parseInt(phoneNumber, 10))
     .map(phoneNumber => `0${phoneNumber.toString()}`)
     .filter(phoneNumber => phoneNumber.length === digits)
     .join('|')
@@ -12,7 +11,7 @@ const findNumbersByLength = (digits: number, trailingDigits: number) => {
   return new RegExp(`^(${areaCodes})\\d{5,${trailingDigits}}$`)
 }
 
-const validator = (phoneNumber: string): boolean => {
+export const validator = (phoneNumber: string): boolean => {
   const normalized = normalize(phoneNumber)
   const areaCodeDigits = areaCodeDigitCount(normalized)
 
@@ -29,5 +28,3 @@ const validator = (phoneNumber: string): boolean => {
       return findNumbersByLength(4, 6).test(normalized)
   }
 }
-
-export default validator

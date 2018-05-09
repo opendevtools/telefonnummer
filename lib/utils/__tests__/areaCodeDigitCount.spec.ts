@@ -1,4 +1,4 @@
-import areaCodeDigitCount from '../areaCodeDigitCount'
+import { areaCodeDigitCount } from '../areaCodeDigitCount'
 
 const numberHelper = (numbers: string[], expected: number): void => {
   numbers.forEach(phoneNumber => {

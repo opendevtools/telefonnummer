@@ -1,4 +1,4 @@
-import numberingArea from '../numberingArea'
+import { numberingArea } from '../numberingArea'
 
 describe('#numberingArea', () => {
   it('returns empty string if nothing is found', () => {

@@ -1,4 +1,4 @@
-import phoneNumbersAreEqual from '../comparePhoneNumbers'
+import { phoneNumbersAreEqual } from '../comparePhoneNumbers'
 
 describe('#phoneNumbersAreEqual', () => {
   it('returns true if phone numbers are equal', () => {

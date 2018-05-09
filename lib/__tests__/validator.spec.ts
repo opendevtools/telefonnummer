@@ -1,4 +1,4 @@
-import validator from '../validator'
+import { validator } from '../validator'
 
 function validateHelper (numbers, expected) {
   numbers.forEach(phoneNumber => {

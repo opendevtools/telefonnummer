@@ -1,24 +1,24 @@
-import numberingAreaOriginal from './numberingArea'
-import parseOriginal from './parser'
-import riktnummerOriginal, { findMatchingAreaName } from './riktnummer'
-import phoneNumbersAreEqual from './utils/comparePhoneNumbers'
-import normalizeOriginal from './utils/normalize'
-import validatorOriginal from './validator'
+import * as NumberingArea from './numberingArea'
+import * as Parser from './parser'
+import * as Riktnummer from './riktnummer'
+import * as Compare from './utils/comparePhoneNumbers'
+import * as Normalize from './utils/normalize'
+import * as Validator from './validator'
 
-export const areEqual = phoneNumbersAreEqual
-export const areaCode = findMatchingAreaName
-export const normalize = normalizeOriginal
-export const numberingArea = numberingAreaOriginal
-export const parse = parseOriginal
-export const riktnummer = riktnummerOriginal
-export const validator = validatorOriginal
+export const areEqual = Compare.phoneNumbersAreEqual
+export const areaCode = Riktnummer.findMatchingAreaName
+export const normalize = Normalize.normalize
+export const numberingArea = NumberingArea.numberingArea
+export const riktnummer = Riktnummer.RIKTNUMMER
+export const validator = Validator.validator
+export const parse = Parser.phoneNumberParser
 
 export default {
-  areEqual: phoneNumbersAreEqual,
-  areaCode: findMatchingAreaName,
-  normalize: normalizeOriginal,
-  numberingArea: numberingAreaOriginal,
-  parse: parseOriginal,
-  riktnummer: riktnummerOriginal,
-  validator: validatorOriginal,
+  areEqual: Compare.phoneNumbersAreEqual,
+  areaCode: Riktnummer.findMatchingAreaName,
+  normalize: Normalize.normalize,
+  numberingArea: NumberingArea.numberingArea,
+  parse: Parser.phoneNumberParser,
+  riktnummer: Riktnummer.RIKTNUMMER,
+  validator: Validator.validator,
 }

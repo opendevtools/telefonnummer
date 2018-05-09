@@ -1,4 +1,4 @@
-const RIKTNUMMER = [
+export const RIKTNUMMER = [
   '011 Norrköping',
   '0120 Åtvidaberg',
   '0121 Söderköping',
@@ -266,8 +266,16 @@ const RIKTNUMMER = [
 ]
 
 export const findByMatch = (phoneNumber: string, matches: RegExp): string => {
-  const area = RIKTNUMMER.filter(r => r.toLowerCase().indexOf(phoneNumber) > -1)
-  return area.length > 0 ? area[0].match(matches)[0].trim() : ''
+  const area = RIKTNUMMER.filter(
+    r => r.toLowerCase().indexOf(phoneNumber) > -1,
+  )
+
+  if (area && area.length) {
+    const matched = area[0].match(matches)
+    return matched && matched.length > 0 ? matched[0].trim() : ''
+  }
+
+  return ''
 }
 
 export const findMatchingAreaCode = (phoneNumber: string): string =>
@@ -275,5 +283,3 @@ export const findMatchingAreaCode = (phoneNumber: string): string =>
 
 export const findMatchingAreaName = (areaName: string): string =>
   findByMatch(areaName.toLowerCase(), /\d+/g)
-
-export default RIKTNUMMER

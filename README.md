@@ -17,7 +17,7 @@ npm install telefonnummer --save
 ### Parse
 
 ```js
-parse(phoneNumber: string, separator?: string): string
+parse(phoneNumber: string, options?: ParserOptions ): string
 ```
 
 Take a phone number and return a parsed version of the number. Parser is also default export of package, but might be removed as default in the future.
@@ -34,8 +34,18 @@ parse('031626262') // 031-62 62 62
 parse('050012345') // 0500-123 45
 
 // With custom separator
-parse('0701234567', ':') // 070:123 45 67
+parse('0701234567', { separator: ':' }) // 070:123 45 67
+
+// Internationalized
+parse('0701234567', { internationalized: true }) // +46701234567
 ```
+
+#### Parser options
+
+| Property          | Type    | Default | Description                                   |
+| :---------------- | :------ | :------ | :-------------------------------------------- |
+| separator         | string  | '-'     | Separator between area code and phone number  |
+| internationalized | boolean | false   | If true returns on the format `+46xxxxxxxxxx` |
 
 ### Area code
 
@@ -159,9 +169,11 @@ npm test
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore -->
 | [<img src="https://avatars1.githubusercontent.com/u/1478102?v=4" width="100px;"/><br /><sub><b>Rickard Laurin</b></sub>](http://willcodefor.beer/)<br />[🐛](https://github.com/believer/telefonnummer/issues?q=author%3Abeliever "Bug reports") [💻](https://github.com/believer/telefonnummer/commits?author=believer "Code") [📖](https://github.com/believer/telefonnummer/commits?author=believer "Documentation") [👀](#review-believer "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/8521353?v=4" width="100px;"/><br /><sub><b>Jimmy Jardland</b></sub>](http://pokechecked.com)<br />[📖](https://github.com/believer/telefonnummer/commits?author=Jimjardland "Documentation") |
 | :---: | :---: |
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

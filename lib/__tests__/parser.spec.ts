@@ -1,4 +1,4 @@
-import phoneNumberParser from '../parser'
+import { phoneNumberParser } from '../parser'
 
 const parserHelper = (numbers, expected) => {
   numbers.forEach(phoneNumber => {
@@ -68,14 +68,32 @@ describe('#phoneNumberParser', () => {
     expect(phoneNumberParser('+46701234567')).toEqual('070-123 45 67')
   })
 
+  it('parses numbers with 0046', () => {
+    expect(phoneNumberParser('0046701234567')).toEqual('070-123 45 67')
+  })
+
   it('parses numbers with complex internationalization', () => {
     expect(phoneNumberParser('+46 (0) 701234567')).toEqual('070-123 45 67')
   })
 
   it('can parse with custom separator', () => {
-    expect(phoneNumberParser('031446572', ' <> ')).toEqual('031 <> 44 65 72')
-    expect(phoneNumberParser('0701234567', ' ')).toEqual('070 123 45 67')
-    expect(phoneNumberParser('0701234567', ':')).toEqual('070:123 45 67')
-    expect(phoneNumberParser('050012345', ' ')).toEqual('0500 123 45')
+    expect(phoneNumberParser('031446572', { separator: ' <> ' })).toEqual(
+      '031 <> 44 65 72',
+    )
+    expect(phoneNumberParser('0701234567', { separator: ' ' })).toEqual(
+      '070 123 45 67',
+    )
+    expect(phoneNumberParser('0701234567', { separator: ':' })).toEqual(
+      '070:123 45 67',
+    )
+    expect(phoneNumberParser('050012345', { separator: ' ' })).toEqual(
+      '0500 123 45',
+    )
+  })
+
+  it('can parse as international number', () => {
+    expect(
+      phoneNumberParser('0701234567', { internationalized: true }),
+    ).toEqual('+46701234567')
   })
 })

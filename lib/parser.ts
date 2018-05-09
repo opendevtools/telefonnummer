@@ -1,12 +1,19 @@
-import areaCodeDigitCount from './utils/areaCodeDigitCount'
-import makeRegex from './utils/makeRegex'
-import normalize from './utils/normalize'
-import numberReplace from './utils/numberReplace'
+import { areaCodeDigitCount } from './utils/areaCodeDigitCount'
+import { makeRegex } from './utils/makeRegex'
+import { normalize } from './utils/normalize'
+import { numberReplace } from './utils/numberReplace'
 
-const phoneNumberParser = (
+export interface ParserOptions {
+  internationalized?: boolean
+  separator?: string
+}
+
+export const phoneNumberParser = (
   phoneNumber: string,
-  separator: string = '-',
+  options: ParserOptions = {},
 ): string => {
+  const { internationalized = false, separator = '-' } = options
+
   if (!phoneNumber) {
     return ''
   }
@@ -17,11 +24,11 @@ const phoneNumberParser = (
   const replaceNormalized = numberReplace(normalized)
   const replacer = replaceNormalized(`$1${separator}$2 $3 $4`)
   const standardFormat = replaceNormalized(`$1${separator}$2 $3`)
-  const shortNumberParse = standardFormat(firstDigits(3)('short'))
+  const shortNumberParse = standardFormat(firstDigits(3)('short'), options)
   const numberLength = normalized.length
 
-  const voicemail: string[] = ['147', '222', '333', '888'].reduce(
-    (p, c) => p.concat([c, '0' + c]),
+  const voicemail = ['147', '222', '333', '888'].reduce<string[]>(
+    (acc, curr) => [...acc, curr, `0${curr}`],
     [],
   )
 
@@ -35,18 +42,18 @@ const phoneNumberParser = (
       // Stockholm
       const type = numberLength === 10 ? 'tenDigit' : 'long'
 
-      return replacer(firstDigits(numberLength === 8 ? 2 : 3)(type))
+      return replacer(firstDigits(numberLength === 8 ? 2 : 3)(type), options)
     case 3:
       // Mobile and three digit area codes
       return numberLength === 8
         ? shortNumberParse
-        : replacer(firstDigits(numberLength === 9 ? 2 : 3)('long'))
+        : replacer(firstDigits(numberLength === 9 ? 2 : 3)('long'), options)
     case 4:
       // Four digit area codes
       return numberLength === 9
         ? shortNumberParse
-        : replacer(firstDigits(2)('long'))
+        : replacer(firstDigits(2)('long'), options)
+    default:
+      return ''
   }
 }
-
-export default phoneNumberParser

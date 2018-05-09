@@ -1,7 +1,5 @@
-import normalize from './normalize'
+import { normalize } from './normalize'
 
-const phoneNumbersAreEqual = (first: string, second: string) => {
+export const phoneNumbersAreEqual = (first: string, second: string) => {
   return normalize(first) === normalize(second)
 }
-
-export default phoneNumbersAreEqual

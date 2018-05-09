@@ -1,4 +1,4 @@
-import normalize from '../normalize'
+import { normalize } from '../normalize'
 
 describe('utils/normalize', () => {
   it('should handle numbers with +46', () => {
