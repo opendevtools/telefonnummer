@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "importHelpers": true,
-    "lib": ["es7"],
+    "lib": ["es7", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
