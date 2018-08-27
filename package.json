@@ -72,7 +72,7 @@
     "semantic-release": "15.9.12",
     "travis-deploy-once": "4.4.1",
     "ts-jest": "23.0.1",
-    "tsc-watch": "1.0.26",
+    "tsc-watch": "1.0.27",
     "tslint": "5.11.0",
     "typescript": "2.9.2"
   },
