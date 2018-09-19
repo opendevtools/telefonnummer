@@ -71,7 +71,7 @@
     "rollup-plugin-uglify": "5.0.2",
     "semantic-release": "15.9.15",
     "travis-deploy-once": "4.4.1",
-    "ts-jest": "23.0.1",
+    "ts-jest": "23.10.0",
     "tsc-watch": "1.0.27",
     "tslint": "5.11.0",
     "typescript": "3.0.3"
