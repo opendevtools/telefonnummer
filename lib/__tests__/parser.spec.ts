@@ -1,6 +1,6 @@
 import { phoneNumberParser } from '../parser'
 
-const parserHelper = (numbers, expected) => {
+const parserHelper = (numbers: string[], expected: string) => {
   numbers.forEach(phoneNumber => {
     expect(phoneNumberParser(phoneNumber)).toEqual(expected)
   })
