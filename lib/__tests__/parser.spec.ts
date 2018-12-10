@@ -65,6 +65,7 @@ describe('#phoneNumberParser', () => {
   })
 
   it('parses numbers with +46', () => {
+    expect(phoneNumberParser('+46 0700123456')).toEqual('070-012 34 56')
     expect(phoneNumberParser('+46701234567')).toEqual('070-123 45 67')
   })
 
