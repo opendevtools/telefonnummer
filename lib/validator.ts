@@ -12,6 +12,10 @@ const findNumbersByLength = (digits: number, trailingDigits: number) => {
 }
 
 export const validator = (phoneNumber: string): boolean => {
+  if (/[a-z]/gi.test(phoneNumber)) {
+    return false
+  }
+
   const normalized = normalize(phoneNumber)
   const areaCodeDigits = areaCodeDigitCount(normalized)
 

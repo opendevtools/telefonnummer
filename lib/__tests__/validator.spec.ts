@@ -1,85 +1,179 @@
+import cases from 'jest-in-case'
 import { validator } from '../validator'
 
-function validateHelper (numbers, expected) {
-  numbers.forEach(phoneNumber => {
-    expect(validator(phoneNumber)).toBe(expected)
-  })
-}
+cases(
+  'errors for non-numerical inputs',
+  ({ phoneNumber }) => {
+    expect(validator(phoneNumber)).toBe(false)
+  },
+  {
+    '070-abc de fg': {
+      phoneNumber: '070-abc de fg',
+    },
+    '0701ggas234asdf567d': {
+      phoneNumber: '0701ggas234asdf567d',
+    },
+    '070abcdefb': {
+      phoneNumber: '070abcdefb',
+    },
+    abcdefg: {
+      phoneNumber: 'abcdefg',
+    },
+  },
+)
 
-describe('#validator', () => {
-  it('returns false for non-numerical input', () => {
-    const numbers = ['abcdefg', '070abcdefb', '070-abc de fg']
+cases(
+  'checks validity of phone numbers',
+  ({ phoneNumber, valid }) => {
+    expect(validator(phoneNumber)).toBe(valid)
+  },
+  {
+    '070-123 45 67': {
+      phoneNumber: '070-123 45 67',
+      valid: true,
+    },
+    '070123456': {
+      phoneNumber: '070123456',
+      valid: false,
+    },
+    '0701234567': {
+      phoneNumber: '0701234567',
+      valid: true,
+    },
+    '071-123 45 67': {
+      phoneNumber: '071-123 45 67',
+      valid: false,
+    },
+    '0711234567': {
+      phoneNumber: '0711234567',
+      valid: false,
+    },
+    '0721234567': {
+      phoneNumber: '0721234567',
+      valid: true,
+    },
+    '0731234567': {
+      phoneNumber: '0731234567',
+      valid: true,
+    },
+    '0761234567': {
+      phoneNumber: '0761234567',
+      valid: true,
+    },
+    '0791234567': {
+      phoneNumber: '0791234567',
+      valid: true,
+    },
+  },
+)
 
-    validateHelper(numbers, false)
-  })
+cases(
+  'returns correct for 2 digit area codes',
+  ({ phoneNumber, valid }) => {
+    expect(validator(phoneNumber)).toBe(valid)
+  },
+  {
+    '08-12 34 56': {
+      phoneNumber: '08-12 34 56',
+      valid: true,
+    },
+    '08-12 34 5611': {
+      phoneNumber: '08-12 34 5611',
+      valid: false,
+    },
+    '08-123 45 67': {
+      phoneNumber: '08-123 45 67',
+      valid: true,
+    },
+    '08-123 67': {
+      phoneNumber: '08-123 67',
+      valid: false,
+    },
+    '0812345': {
+      phoneNumber: '0812345',
+      valid: false,
+    },
+    '08123456': {
+      phoneNumber: '08123456',
+      valid: true,
+    },
+    '081234567': {
+      phoneNumber: '081234567',
+      valid: true,
+    },
+    '0812345678': {
+      phoneNumber: '0812345678',
+      valid: false,
+    },
+  },
+)
 
-  it('returns true for valid mobile numbers', () => {
-    const numbers = [
-      '0701234567',
-      '0721234567',
-      '0731234567',
-      '0761234567',
-      '0791234567',
-      '070-123 45 67',
-    ]
+cases(
+  'returns correct for 3 digit area codes',
+  ({ phoneNumber, valid }) => {
+    expect(validator(phoneNumber)).toBe(valid)
+  },
+  {
+    '0104465721': {
+      phoneNumber: '0104465721',
+      valid: false,
+    },
+    '03112345': {
+      phoneNumber: '03112345',
+      valid: true,
+    },
+    '0311234567': {
+      phoneNumber: '0311234567',
+      valid: true,
+    },
+    '031446572': {
+      phoneNumber: '031446572',
+      valid: true,
+    },
+    '031626262': {
+      phoneNumber: '031626262',
+      valid: true,
+    },
+    46311234567: {
+      phoneNumber: '46311234567',
+      valid: true,
+    },
+    4631626262: {
+      phoneNumber: '4631626262',
+      valid: true,
+    },
+  },
+)
 
-    validateHelper(numbers, true)
-  })
-
-  it('returns false for invalid mobile numbers', () => {
-    const numbers = ['0711234567', '070123456', '071-123 45 67']
-
-    validateHelper(numbers, false)
-  })
-
-  it('returns correct for 2 digit area codes', () => {
-    const validNumbers = [
-      '081234567',
-      '08123456',
-      '08-123 45 67',
-      '08-12 34 56',
-    ]
-
-    const invalidNumbers = [
-      '0812345678',
-      '0812345',
-      '08-123 67',
-      '08-12 34 5611',
-    ]
-
-    validateHelper(validNumbers, true)
-    validateHelper(invalidNumbers, false)
-  })
-
-  it('returns correct for 3 digit area codes', () => {
-    const validNumbers = [
-      '03112345',
-      '031446572',
-      '4631626262',
-      '031626262',
-      '46311234567',
-      '0311234567',
-    ]
-
-    const invalidNumbers = ['0104465721']
-
-    validateHelper(validNumbers, true)
-    validateHelper(invalidNumbers, false)
-  })
-
-  it('returns correct for 4 digit area codes', () => {
-    const numbers = [
-      '050012345',
-      '46304123456',
-      '0304123456',
-      '46500123456',
-      '0500123456',
-    ]
-
-    validateHelper(numbers, true)
-  })
-
-  it('returns false for any other case', () => {
-    expect(validator('050012123456')).toBe(false)
-  })
-})
+cases(
+  'returns correct for 4 digit area codes',
+  ({ phoneNumber, valid }) => {
+    expect(validator(phoneNumber)).toBe(valid)
+  },
+  {
+    '0304123456': {
+      phoneNumber: '0304123456',
+      valid: true,
+    },
+    '050012123456': {
+      phoneNumber: '050012123456',
+      valid: false,
+    },
+    '050012345': {
+      phoneNumber: '050012345',
+      valid: true,
+    },
+    '0500123456': {
+      phoneNumber: '0500123456',
+      valid: true,
+    },
+    46304123456: {
+      phoneNumber: '46304123456',
+      valid: true,
+    },
+    46500123456: {
+      phoneNumber: '46500123456',
+      valid: true,
+    },
+  },
+)

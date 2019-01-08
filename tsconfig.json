@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "declaration": true,
     "declarationDir": "dist",
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
+    "esModuleInterop": true,
     "importHelpers": true,
     "lib": ["es7", "esnext"],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
