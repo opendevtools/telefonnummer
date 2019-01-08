@@ -7,10 +7,6 @@ import * as Validator from './validator'
 
 export const areEqual = Compare.phoneNumbersAreEqual
 export const areaCode = Riktnummer.findMatchingAreaName
-export const normalize = Normalize.normalize
-export const numberingArea = NumberingArea.numberingArea
-export const riktnummer = Riktnummer.RIKTNUMMER
-export const validator = Validator.validator
 export const parse = Parser.phoneNumberParser
 
 export default {
@@ -22,3 +18,8 @@ export default {
   riktnummer: Riktnummer.RIKTNUMMER,
   validator: Validator.validator,
 }
+
+export * from './numberingArea'
+export * from './riktnummer'
+export * from './utils/normalize'
+export * from './validator'
