@@ -58,7 +58,7 @@
     "@types/node": "10.14.6",
     "all-contributors-cli": "6.4.0",
     "cross-env": "5.2.0",
-    "husky": "2.2.0",
+    "husky": "2.3.0",
     "jest": "24.8.0",
     "jest-in-case": "1.0.2",
     "lint-staged": "8.1.6",
