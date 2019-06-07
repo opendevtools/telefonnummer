@@ -62,7 +62,7 @@
     "jest": "24.8.0",
     "jest-in-case": "1.0.2",
     "lint-staged": "8.2.0",
-    "prettier": "1.18.0",
+    "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "rollup": "1.14.3",
     "rollup-plugin-commonjs": "10.0.0",
