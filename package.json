@@ -53,7 +53,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
-    "@types/jest": "24.0.16",
+    "@types/jest": "24.0.17",
     "@types/jest-in-case": "1.0.1",
     "@types/node": "10.14.14",
     "all-contributors-cli": "6.8.1",
