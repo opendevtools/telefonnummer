@@ -2,6 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "dist",
+    "downlevelIteration": true,
     "esModuleInterop": true,
     "importHelpers": true,
     "lib": ["es7", "esnext"],
