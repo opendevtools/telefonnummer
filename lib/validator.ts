@@ -2,6 +2,10 @@ import { RIKTNUMMER } from './riktnummer'
 import { areaCodeDigitCount } from './utils/areaCodeDigitCount'
 import { normalize } from './utils/normalize'
 
+export interface ValidatorOptions {
+  onlyMobile?: boolean
+}
+
 const findNumbersByLength = (digits: number, trailingDigits: number) => {
   const areaCodes = RIKTNUMMER.map(phoneNumber => parseInt(phoneNumber, 10))
     .map(phoneNumber => `0${phoneNumber.toString()}`)
@@ -11,7 +15,10 @@ const findNumbersByLength = (digits: number, trailingDigits: number) => {
   return new RegExp(`^(${areaCodes})\\d{5,${trailingDigits}}$`)
 }
 
-export const validator = (phoneNumber: string): boolean => {
+export const validator = (
+  phoneNumber: string,
+  options: ValidatorOptions = { onlyMobile: false },
+): boolean => {
   if (/[a-z]/gi.test(phoneNumber)) {
     return false
   }
@@ -21,6 +28,10 @@ export const validator = (phoneNumber: string): boolean => {
 
   if (normalized.substr(0, 2) === '07') {
     return /^07(0|2|3|6|9)\d{7}$/.test(normalized)
+  }
+
+  if (options.onlyMobile) {
+    return false
   }
 
   switch (areaCodeDigits) {

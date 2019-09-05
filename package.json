@@ -8,8 +8,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development tsc-watch --project tsconfig.json  --onSuccess \"rollup -c\"",
     "lint": "tslint -c tslint.json 'lib/**/*.{ts,tsx}'",
-    "test": "jest",
+    "test": "is-ci \"test:ci\" \"test:watch\"",
     "test:dev": "jest --watch",
+    "test:watch": "jest --watch",
     "coverage": "npm test -- --coverage",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json && rollup -c && rimraf compiled",
@@ -59,6 +60,7 @@
     "all-contributors-cli": "6.9.0",
     "cross-env": "5.2.1",
     "husky": "3.0.5",
+    "is-ci-cli": "1.1.1",
     "jest": "24.9.0",
     "jest-in-case": "1.0.2",
     "lint-staged": "9.2.5",

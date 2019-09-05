@@ -23,11 +23,15 @@ cases(
 )
 
 cases(
-  'checks validity of phone numbers',
+  'checks validity of mobile phone numbers',
   ({ phoneNumber, valid }) => {
     expect(validator(phoneNumber)).toBe(valid)
   },
   {
+    '+46791234567': {
+      phoneNumber: '+46791234567',
+      valid: true,
+    },
     '070-123 45 67': {
       phoneNumber: '070-123 45 67',
       valid: true,
@@ -64,6 +68,10 @@ cases(
       phoneNumber: '0791234567',
       valid: true,
     },
+    'Only allow Swedish numbers': {
+      phoneNumber: '+44791234567',
+      valid: false,
+    },
   },
 )
 
@@ -73,6 +81,14 @@ cases(
     expect(validator(phoneNumber)).toBe(valid)
   },
   {
+    '+4681234567': {
+      phoneNumber: '+4681234567',
+      valid: true,
+    },
+    '004681234567': {
+      phoneNumber: '004681234567',
+      valid: true,
+    },
     '08-12 34 56': {
       phoneNumber: '08-12 34 56',
       valid: true,
@@ -105,6 +121,10 @@ cases(
       phoneNumber: '0812345678',
       valid: false,
     },
+    'Only allow Swedish numbers': {
+      phoneNumber: '+4481234567',
+      valid: false,
+    },
   },
 )
 
@@ -114,6 +134,10 @@ cases(
     expect(validator(phoneNumber)).toBe(valid)
   },
   {
+    '+4631626262': {
+      phoneNumber: '+4631626262',
+      valid: true,
+    },
     '0104465721': {
       phoneNumber: '0104465721',
       valid: false,
@@ -142,6 +166,10 @@ cases(
       phoneNumber: '4631626262',
       valid: true,
     },
+    'Only allow Swedish numbers': {
+      phoneNumber: '+443112345',
+      valid: false,
+    },
   },
 )
 
@@ -151,6 +179,10 @@ cases(
     expect(validator(phoneNumber)).toBe(valid)
   },
   {
+    '+46500123456': {
+      phoneNumber: '+46500123456',
+      valid: true,
+    },
     '0304123456': {
       phoneNumber: '0304123456',
       valid: true,
@@ -174,6 +206,71 @@ cases(
     46500123456: {
       phoneNumber: '46500123456',
       valid: true,
+    },
+    'Only allow Swedish numbers': {
+      phoneNumber: '+4450012345',
+      valid: false,
+    },
+  },
+)
+
+cases(
+  'checks validity of phone numbers, but only allow mobile numbers',
+  ({ valid, phoneNumber }) => {
+    expect(validator(phoneNumber, { onlyMobile: true })).toBe(valid)
+  },
+  {
+    '031626262': {
+      phoneNumber: '031626262',
+      valid: false,
+    },
+    '0500123456': {
+      phoneNumber: '0500123456',
+      valid: false,
+    },
+    '070-123 45 67': {
+      phoneNumber: '070-123 45 67',
+      valid: true,
+    },
+    '070123456': {
+      phoneNumber: '070123456',
+      valid: false,
+    },
+    '0701234567': {
+      phoneNumber: '0701234567',
+      valid: true,
+    },
+    '071-123 45 67': {
+      phoneNumber: '071-123 45 67',
+      valid: false,
+    },
+    '0711234567': {
+      phoneNumber: '0711234567',
+      valid: false,
+    },
+    '0721234567': {
+      phoneNumber: '0721234567',
+      valid: true,
+    },
+    '0731234567': {
+      phoneNumber: '0731234567',
+      valid: true,
+    },
+    '0751234567': {
+      phoneNumber: '0751234567',
+      valid: false,
+    },
+    '0761234567': {
+      phoneNumber: '0761234567',
+      valid: true,
+    },
+    '0791234567': {
+      phoneNumber: '0791234567',
+      valid: true,
+    },
+    '081234567': {
+      phoneNumber: '081234567',
+      valid: false,
     },
   },
 )

@@ -16,7 +16,7 @@ npm install telefonnummer --save
 
 ### Parse
 
-```js
+```typescript
 parse(phoneNumber: string, options?: ParserOptions ): string
 ```
 
@@ -24,7 +24,7 @@ Take a phone number and return a parsed version of the number. Parser is also de
 
 #### Example
 
-```js
+```typescript
 import { parse } from 'telefonnummer'
 
 parse('222') // Röstbrevlåda (Voicemail in Swedish)
@@ -49,7 +49,7 @@ parse('0701234567', { internationalized: true }) // +46701234567
 
 ### Area code
 
-```js
+```typescript
 areaCode(area: string): string
 ```
 
@@ -57,7 +57,7 @@ Returns the area code of the provided city
 
 #### Example
 
-```js
+```typescript
 import { areaCode } from 'telefonnummer'
 
 areaCode('Stockholm') // 08
@@ -66,7 +66,7 @@ areaCode('Korpilombolo') // 0977
 
 ### Numbering area
 
-```js
+```typescript
 numberingArea(areaCode: string | number): string
 ```
 
@@ -74,7 +74,7 @@ Returns the numbering area for a provided area code or phone number. Also handle
 
 #### Example
 
-```js
+```typescript
 import { numberingArea } from 'telefonnummer'
 
 numberingArea('0977-123 45') // Korpilombolo
@@ -86,25 +86,31 @@ numberingArea(8) // Stockholm
 
 ### Validator
 
-```js
-validator(phoneNumber: string): boolean
+```typescript
+interface ValidatorOptions {
+  onlyMobile?: boolean
+}
+
+validator(phoneNumber: string, options?: ValidatorOptions): boolean
 ```
 
 Validates both mobile and landline numbers.
 
 #### Example
 
-```js
+```typescript
 import { validator } from 'telefonnummer'
 
 validator('0977-123 45') // true
 validator('081234567') // true
 validator('050012123456') // false
+validator('0500123456', { onlyMobile: true }) // false
+validator('0701234567', { onlyMobile: true }) // true
 ```
 
 ### Area codes
 
-```js
+```typescript
 areaCodes(): string[]
 ```
 
@@ -112,7 +118,7 @@ Returns a number sorted array of all the area codes.
 
 #### Example
 
-```js
+```typescript
 import { areaCodes } from 'telefonnummer'
 
 areaCodes()
@@ -126,7 +132,7 @@ areaCodes()
 
 ### Normalize
 
-```js
+```typescript
 normalize(string): string
 ```
 
@@ -134,7 +140,7 @@ Clean up any non-digits and country codes from phone number.
 
 #### Example
 
-```js
+```typescript
 import { normalize } from 'telefonnummer'
 
 normalize('070-123.45x67') // 0701234567
@@ -143,7 +149,7 @@ normalize('+46701234567') // 0701234567
 
 ### AreEqual
 
-```js
+```typescript
 areEqual(string, string): boolean
 ```
 
@@ -151,7 +157,7 @@ Cleans up provided strings and checks if the two phone number values match.
 
 #### Example
 
-```js
+```typescript
 import { areEqual } from 'telefonnummer'
 
 areEqual('0701234567', '0701234567') // true
