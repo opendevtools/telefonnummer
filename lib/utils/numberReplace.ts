@@ -3,7 +3,7 @@ import { normalize } from './normalize'
 
 export const numberReplace = (phoneNumber: string) => (numberParse: string) => (
   regexReplace: RegExp,
-  options: ParserOptions = {},
+  options: ParserOptions = {}
 ): string => {
   const parsedNumber = phoneNumber.replace(regexReplace, numberParse)
 

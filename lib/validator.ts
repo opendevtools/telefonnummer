@@ -6,7 +6,10 @@ export interface ValidatorOptions {
   onlyMobile?: boolean
 }
 
-const findNumbersByLength = (digits: number, trailingDigits: number) => {
+const findNumbersByLength = (
+  digits: number,
+  trailingDigits: number
+): RegExp => {
   const areaCodes = RIKTNUMMER.map(phoneNumber => parseInt(phoneNumber, 10))
     .map(phoneNumber => `0${phoneNumber.toString()}`)
     .filter(phoneNumber => phoneNumber.length === digits)
@@ -17,7 +20,7 @@ const findNumbersByLength = (digits: number, trailingDigits: number) => {
 
 export const validator = (
   phoneNumber: string,
-  options: ValidatorOptions = { onlyMobile: false },
+  options: ValidatorOptions = { onlyMobile: false }
 ): boolean => {
   if (/[a-z]/gi.test(phoneNumber)) {
     return false

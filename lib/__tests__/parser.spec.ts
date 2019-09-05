@@ -1,6 +1,6 @@
 import { phoneNumberParser } from '../parser'
 
-const parserHelper = (numbers: string[], expected: string) => {
+const parserHelper = (numbers: string[], expected: string): void => {
   numbers.forEach(phoneNumber => {
     expect(phoneNumberParser(phoneNumber)).toEqual(expected)
   })
@@ -79,22 +79,22 @@ describe('#phoneNumberParser', () => {
 
   it('can parse with custom separator', () => {
     expect(phoneNumberParser('031446572', { separator: ' <> ' })).toEqual(
-      '031 <> 44 65 72',
+      '031 <> 44 65 72'
     )
     expect(phoneNumberParser('0701234567', { separator: ' ' })).toEqual(
-      '070 123 45 67',
+      '070 123 45 67'
     )
     expect(phoneNumberParser('0701234567', { separator: ':' })).toEqual(
-      '070:123 45 67',
+      '070:123 45 67'
     )
     expect(phoneNumberParser('050012345', { separator: ' ' })).toEqual(
-      '0500 123 45',
+      '0500 123 45'
     )
   })
 
   it('can parse as international number', () => {
     expect(
-      phoneNumberParser('0701234567', { internationalized: true }),
+      phoneNumberParser('0701234567', { internationalized: true })
     ).toEqual('+46701234567')
   })
 })

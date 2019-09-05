@@ -15,7 +15,7 @@ describe('riktnummer', () => {
       expect(riktnummer.findMatchingAreaName('korpilombolo')).toEqual('0977')
       expect(riktnummer.findMatchingAreaName('Korpilombolo')).toEqual('0977')
       expect(riktnummer.findMatchingAreaName('invalid_swedish_city')).toEqual(
-        '',
+        ''
       )
     })
   })

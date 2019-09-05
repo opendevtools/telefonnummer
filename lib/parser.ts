@@ -10,9 +10,9 @@ export interface ParserOptions {
 
 export const phoneNumberParser = (
   phoneNumber: string,
-  options: ParserOptions = {},
+  options: ParserOptions = { internationalized: false, separator: '-' }
 ): string => {
-  const { internationalized = false, separator = '-' } = options
+  const { separator } = options
 
   if (!phoneNumber) {
     return ''
@@ -29,7 +29,7 @@ export const phoneNumberParser = (
 
   const voicemail = ['147', '222', '333', '888'].reduce<string[]>(
     (acc, curr) => [...acc, curr, `0${curr}`],
-    [],
+    []
   )
 
   // Voicemail

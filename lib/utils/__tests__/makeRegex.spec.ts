@@ -11,7 +11,7 @@ describe('#makeRegex', () => {
 
   it('handles type tenDigit', () => {
     expect(makeRegex(3)(3)('tenDigit')).toEqual(
-      /^(\d{3})(\d{3})(\d{3})(\d{2})$/,
+      /^(\d{3})(\d{3})(\d{3})(\d{2})$/
     )
   })
 

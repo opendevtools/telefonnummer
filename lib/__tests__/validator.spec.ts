@@ -19,7 +19,7 @@ cases(
     abcdefg: {
       phoneNumber: 'abcdefg',
     },
-  },
+  }
 )
 
 cases(
@@ -72,7 +72,7 @@ cases(
       phoneNumber: '+44791234567',
       valid: false,
     },
-  },
+  }
 )
 
 cases(
@@ -125,7 +125,7 @@ cases(
       phoneNumber: '+4481234567',
       valid: false,
     },
-  },
+  }
 )
 
 cases(
@@ -170,7 +170,7 @@ cases(
       phoneNumber: '+443112345',
       valid: false,
     },
-  },
+  }
 )
 
 cases(
@@ -211,7 +211,7 @@ cases(
       phoneNumber: '+4450012345',
       valid: false,
     },
-  },
+  }
 )
 
 cases(
@@ -272,5 +272,5 @@ cases(
       phoneNumber: '081234567',
       valid: false,
     },
-  },
+  }
 )
