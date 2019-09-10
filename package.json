@@ -62,7 +62,7 @@
     "all-contributors-cli": "6.9.0",
     "cross-env": "5.2.1",
     "eslint": "6.3.0",
-    "eslint-config-prettier": "6.2.0",
+    "eslint-config-prettier": "6.3.0",
     "eslint-plugin-prettier": "3.1.0",
     "husky": "3.0.5",
     "is-ci-cli": "1.1.1",
