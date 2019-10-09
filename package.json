@@ -82,6 +82,6 @@
     "travis-deploy-once": "5.0.11",
     "ts-jest": "24.1.0",
     "tsc-watch": "4.0.0",
-    "typescript": "3.6.3"
+    "typescript": "3.6.4"
   }
 }
