@@ -4,7 +4,6 @@
 [![Build Status](https://travis-ci.org/believer/telefonnummer.svg?branch=master)](https://travis-ci.org/believer/telefonnummer)
 [![Code Climate](https://codeclimate.com/github/believer/telefonnummer/badges/gpa.svg)](https://codeclimate.com/github/believer/telefonnummer)
 [![Test Coverage](https://codeclimate.com/github/believer/telefonnummer/badges/coverage.svg)](https://codeclimate.com/github/believer/telefonnummer/coverage)
-[![Known Vulnerabilities](https://snyk.io/test/github/believer/telefonnummer/badge.svg)](https://snyk.io/test/github/believer/telefonnummer)
 
 _Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format. Area code information is provided by [Post- och telestyrelsen (PTS)](https://www.pts.se/upload/Faktablad/SE/2011/faktablad-riktnummer-nummerordning-pts-f-211_2.pdf).
 
