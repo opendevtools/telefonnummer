@@ -16,11 +16,8 @@
     "build": "tsc -p tsconfig.json && rollup -c && rimraf compiled",
     "prepare": "npm run build",
     "precommit": "lint-staged",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "contributors:generate": "all-contributors generate"
   },
   "lint-staged": {
     "*.ts": [
@@ -52,9 +49,8 @@
   "homepage": "https://github.com/believer/telefonnummer#readme",
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "8.2.0",
-    "@commitlint/config-conventional": "8.2.0",
     "@semantic-release/changelog": "3.0.5",
+    "@semantic-release/git": "7.0.18",
     "@types/jest": "24.0.22",
     "@types/jest-in-case": "1.0.1",
     "@types/node": "10.17.4",
@@ -80,7 +76,6 @@
     "rollup-plugin-sourcemaps": "0.4.2",
     "rollup-plugin-uglify": "6.0.3",
     "semantic-release": "15.13.30",
-    "travis-deploy-once": "5.0.11",
     "ts-jest": "24.1.0",
     "tsc-watch": "4.0.0",
     "typescript": "3.7.2"
