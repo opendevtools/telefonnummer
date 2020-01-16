@@ -78,6 +78,6 @@
     "semantic-release": "16.0.2",
     "ts-jest": "24.3.0",
     "tsc-watch": "4.0.0",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   }
 }
