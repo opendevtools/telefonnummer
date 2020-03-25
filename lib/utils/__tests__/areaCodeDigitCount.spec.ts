@@ -1,7 +1,7 @@
 import { areaCodeDigitCount } from '../areaCodeDigitCount'
 
 const numberHelper = (numbers: string[], expected: number): void => {
-  numbers.forEach(phoneNumber => {
+  numbers.forEach((phoneNumber) => {
     expect(areaCodeDigitCount(phoneNumber)).toEqual(expected)
   })
 }

@@ -266,7 +266,7 @@ export const RIKTNUMMER = [
 ]
 
 export const findByMatch = (phoneNumber: string, matches: RegExp): string => {
-  const area = RIKTNUMMER.filter(r => r.toLowerCase().includes(phoneNumber))
+  const area = RIKTNUMMER.filter((r) => r.toLowerCase().includes(phoneNumber))
 
   return area.length === 0 ? '' : area[0].replace(matches, '').trim()
 }
