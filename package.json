@@ -64,7 +64,7 @@
     "is-ci-cli": "2.0.0",
     "jest": "25.1.0",
     "jest-in-case": "1.0.2",
-    "lint-staged": "10.0.8",
+    "lint-staged": "10.0.9",
     "prettier": "2.0.2",
     "rimraf": "3.0.2",
     "rollup": "2.1.0",
