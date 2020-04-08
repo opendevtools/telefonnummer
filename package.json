@@ -52,7 +52,7 @@
     "@semantic-release/git": "9.0.0",
     "@types/jest": "25.2.1",
     "@types/jest-in-case": "1.0.2",
-    "@types/node": "10.17.18",
+    "@types/node": "10.17.19",
     "@typescript-eslint/eslint-plugin": "2.27.0",
     "@typescript-eslint/parser": "2.27.0",
     "all-contributors-cli": "6.14.1",
