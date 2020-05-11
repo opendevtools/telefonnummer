@@ -75,7 +75,7 @@
     "rollup-plugin-sourcemaps": "0.6.1",
     "rollup-plugin-uglify": "6.0.4",
     "semantic-release": "17.0.7",
-    "ts-jest": "25.5.0",
+    "ts-jest": "25.5.1",
     "tsc-watch": "4.2.3",
     "typescript": "3.8.3"
   }
