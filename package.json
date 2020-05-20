@@ -76,7 +76,7 @@
     "rollup-plugin-uglify": "6.0.4",
     "semantic-release": "17.0.7",
     "ts-jest": "26.0.0",
-    "tsc-watch": "4.2.6",
+    "tsc-watch": "4.2.7",
     "typescript": "3.9.2"
   }
 }
