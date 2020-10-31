@@ -48,11 +48,13 @@
   "homepage": "https://github.com/believer/telefonnummer#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/preset-env": "7.12.1",
+    "@babel/preset-typescript": "7.12.1",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.0",
     "@types/jest": "26.0.15",
     "@types/jest-in-case": "1.0.3",
-    "@types/node": "10.17.44",
+    "@types/node": "14.14.6",
     "@typescript-eslint/eslint-plugin": "4.6.0",
     "@typescript-eslint/parser": "4.6.0",
     "all-contributors-cli": "6.19.0",
@@ -75,7 +77,6 @@
     "rollup-plugin-sourcemaps": "0.6.3",
     "rollup-plugin-uglify": "6.0.4",
     "semantic-release": "17.2.2",
-    "ts-jest": "26.4.3",
     "tsc-watch": "4.2.9",
     "typescript": "4.0.5"
   }

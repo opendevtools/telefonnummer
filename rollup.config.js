@@ -18,14 +18,14 @@ const getUMDConfig = ({ env }) => ({
       env === 'production'
         ? './dist/telefonnummer.umd.min.js'
         : './dist/telefonnummer.umd.js',
-    exports: 'named'
+    exports: 'named',
   },
 
   plugins: [
     resolve(),
     replace({
       exclude: 'node_modules/**',
-      'process.env.NODE_ENV': JSON.stringify(env)
+      'process.env.NODE_ENV': JSON.stringify(env),
     }),
     commonjs(),
     sourceMaps(),
@@ -35,12 +35,12 @@ const getUMDConfig = ({ env }) => ({
         output: { comments: false },
         compress: {
           keep_infinity: true,
-          pure_getters: true
+          pure_getters: true,
         },
         warnings: true,
-        toplevel: false
-      })
-  ]
+        toplevel: false,
+      }),
+  ],
 })
 
 export default [
@@ -48,19 +48,19 @@ export default [
   getUMDConfig({ env: 'development' }),
   {
     input,
-    external: id => !id.startsWith('.') && !id.startsWith('/'),
+    external: (id) => !id.startsWith('.') && !id.startsWith('/'),
     output: [
       {
         file: pkg.module,
         format: 'es',
-        sourcemap: true
+        sourcemap: true,
       },
       {
         file: pkg.main,
         format: 'cjs',
-        sourcemap: true
-      }
+        sourcemap: true,
+      },
     ],
-    plugins: [resolve(), sourceMaps(), filesize()]
-  }
+    plugins: [resolve(), sourceMaps(), filesize()],
+  },
 ]
