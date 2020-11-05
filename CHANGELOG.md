@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/opendevtools/telefonnummer/compare/v2.1.0...v2.1.1) (2020-11-05)
+
+
+### Bug Fixes
+
+* publish as @opendevtools/telefonnummer ([19ef867](https://github.com/opendevtools/telefonnummer/commit/19ef8679cc6d4482333ed124a315a313ca7a6111))
+
 # Changelog
 All notable changes to this project will be documented in this file.
 
