@@ -11,7 +11,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development tsc-watch --project tsconfig.json  --onSuccess \"rollup -c\"",
     "lint": "eslint 'lib/**/*.{ts,tsx}'",
-    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test": "is-ci test:ci test:watch",
     "test:ci": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
