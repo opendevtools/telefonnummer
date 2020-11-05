@@ -174,7 +174,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 
 <!-- prettier-ignore -->
-| [<img src="https://avatars1.githubusercontent.com/u/1478102?v=4" width="100px;"/><br /><sub><b>Rickard Laurin</b></sub>](http://willcodefor.beer/)<br />[🐛](https://github.com/believer/telefonnummer/issues?q=author%3Abeliever "Bug reports") [💻](https://github.com/believer/telefonnummer/commits?author=believer "Code") [📖](https://github.com/believer/telefonnummer/commits?author=believer "Documentation") [👀](#review-believer "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/8521353?v=4" width="100px;"/><br /><sub><b>Jimmy Jardland</b></sub>](http://pokechecked.com)<br />[📖](https://github.com/believer/telefonnummer/commits?author=Jimjardland "Documentation") |
+| [<img src="https://avatars1.githubusercontent.com/u/1478102?v=4" width="100px;"/><br /><sub><b>Rickard Laurin</b></sub>](http://willcodefor.beer/)<br />[🐛](https://github.com/opendevtools/telefonnummer/issues?q=author%3Abeliever "Bug reports") [💻](https://github.com/opendevtools/telefonnummer/commits?author=believer "Code") [📖](https://github.com/opendevtools/telefonnummer/commits?author=believer "Documentation") [👀](#review-believer "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/8521353?v=4" width="100px;"/><br /><sub><b>Jimmy Jardland</b></sub>](http://pokechecked.com)<br />[📖](https://github.com/opendevtools/telefonnummer/commits?author=Jimjardland "Documentation") |
 | :---: | :---: |
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
