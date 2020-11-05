@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/opendevtools/telefonnummer/compare/v2.1.1...v2.2.0) (2020-11-05)
+
+
+### Features
+
+* publish as @opendevtools/telefonnummer ([0ccbcf1](https://github.com/opendevtools/telefonnummer/commit/0ccbcf18a514e9550036a287334b4b7ded66e7bc))
+
 ## [2.1.1](https://github.com/opendevtools/telefonnummer/compare/v2.1.0...v2.1.1) (2020-11-05)
 
 
