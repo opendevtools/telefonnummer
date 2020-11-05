@@ -1,5 +1,5 @@
 {
-  "name": "telefonnummer",
+  "name": "@opendevtools/telefonnummer",
   "version": "2.0.0",
   "description": "Phone number formatter for Swedish phone numbers",
   "main": "dist/telefonnummer.js",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/believer/telefonnummer.git"
+    "url": "https://github.com/opendevtools/telefonnummer.git"
   },
   "keywords": [
     "Phone",
@@ -43,9 +43,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/believer/telefonnummer/issues"
+    "url": "https://github.com/opendevtools/telefonnummer/issues"
   },
-  "homepage": "https://github.com/believer/telefonnummer#readme",
+  "homepage": "https://github.com/opendevtools/telefonnummer#readme",
   "dependencies": {},
   "devDependencies": {
     "@babel/preset-env": "7.12.1",
