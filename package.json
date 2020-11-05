@@ -5,6 +5,9 @@
   "main": "dist/telefonnummer.js",
   "module": "dist/telefonnummer.es6.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "cross-env NODE_ENV=development tsc-watch --project tsconfig.json  --onSuccess \"rollup -c\"",
     "lint": "eslint 'lib/**/*.{ts,tsx}'",
