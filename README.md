@@ -1,7 +1,7 @@
 ## Telefonnummer
 
-[![npm version](https://badge.fury.io/js/telefonnummer.svg)](https://badge.fury.io/js/telefonnummer)
 [![](https://github.com/opendevtools/telefonnummer/workflows/Release/badge.svg)](https://github.com/opendevtools/telefonnummer/actions?workflow=Release)
+[![npm (scoped)](https://img.shields.io/npm/v/@opendevtools/telefonnummer)](https://npm.im/@opendevtools/telefonnummer)
 
 _Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format. Area code information is provided by [Post- och telestyrelsen (PTS)](https://www.pts.se/upload/Faktablad/SE/2011/faktablad-riktnummer-nummerordning-pts-f-211_2.pdf).
 
