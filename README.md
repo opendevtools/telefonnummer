@@ -1,14 +1,14 @@
 ## Telefonnummer
 
 [![npm version](https://badge.fury.io/js/telefonnummer.svg)](https://badge.fury.io/js/telefonnummer)
-[![](https://github.com/believer/telefonnummer/workflows/Release/badge.svg)](https://github.com/believer/telefonnummer/actions?workflow=Release)
+[![](https://github.com/opendevtools/telefonnummer/workflows/Release/badge.svg)](https://github.com/opendevtools/telefonnummer/actions?workflow=Release)
 
 _Telefonnummer_ is phone number in Swedish. This package formats all Swedish phone numbers, both mobile and landline, to a standard format. Area code information is provided by [Post- och telestyrelsen (PTS)](https://www.pts.se/upload/Faktablad/SE/2011/faktablad-riktnummer-nummerordning-pts-f-211_2.pdf).
 
 ### Installation
 
 ```
-npm install telefonnummer --save
+npm install @opendevtools/telefonnummer --save
 ```
 
 ### Parse
@@ -22,7 +22,7 @@ Take a phone number and return a parsed version of the number. Parser is also de
 #### Example
 
 ```typescript
-import { parse } from 'telefonnummer'
+import { parse } from '@opendevtools/telefonnummer'
 
 parse('222') // Röstbrevlåda (Voicemail in Swedish)
 parse('0701234567') // 070-123 45 67
@@ -55,7 +55,7 @@ Returns the area code of the provided city
 #### Example
 
 ```typescript
-import { areaCode } from 'telefonnummer'
+import { areaCode } from '@opendevtools/telefonnummer'
 
 areaCode('Stockholm') // 08
 areaCode('Korpilombolo') // 0977
@@ -72,7 +72,7 @@ Returns the numbering area for a provided area code or phone number. Also handle
 #### Example
 
 ```typescript
-import { numberingArea } from 'telefonnummer'
+import { numberingArea } from '@opendevtools/telefonnummer'
 
 numberingArea('0977-123 45') // Korpilombolo
 numberingArea('081234567') // Stockholm
@@ -96,7 +96,7 @@ Validates both mobile and landline numbers.
 #### Example
 
 ```typescript
-import { validator } from 'telefonnummer'
+import { validator } from '@opendevtools/telefonnummer'
 
 validator('0977-123 45') // true
 validator('081234567') // true
@@ -116,7 +116,7 @@ Returns a number sorted array of all the area codes.
 #### Example
 
 ```typescript
-import { areaCodes } from 'telefonnummer'
+import { areaCodes } from '@opendevtools/telefonnummer'
 
 areaCodes()
 //  [
@@ -138,7 +138,7 @@ Clean up any non-digits and country codes from phone number.
 #### Example
 
 ```typescript
-import { normalize } from 'telefonnummer'
+import { normalize } from '@opendevtools/telefonnummer'
 
 normalize('070-123.45x67') // 0701234567
 normalize('+46701234567') // 0701234567
@@ -155,7 +155,7 @@ Cleans up provided strings and checks if the two phone number values match.
 #### Example
 
 ```typescript
-import { areEqual } from 'telefonnummer'
+import { areEqual } from '@opendevtools/telefonnummer'
 
 areEqual('0701234567', '0701234567') // true
 areEqual('070-123.45 67', '070123--45 67') // true
