@@ -6,6 +6,10 @@ updates:
     interval: daily
     timezone: Europe/Stockholm
   open-pull-requests-limit: 10
+  automerged_updates:
+  - match:
+      dependency_type: "all"
+      update_type: "semver:patch"
   ignore:
   - dependency-name: husky
     versions:
