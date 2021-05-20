@@ -263,12 +263,12 @@ export const RIKTNUMMER = [
   '0978 Pajala',
   '0980 Kiruna',
   '0981 Vittangi',
-]
+] as const
 
 export const findByMatch = (phoneNumber: string, matches: RegExp): string => {
   const area = RIKTNUMMER.filter((r) => r.toLowerCase().includes(phoneNumber))
 
-  return area.length === 0 ? '' : area[0].replace(matches, '').trim()
+  return area?.[0]?.replace(matches, '').trim() ?? ''
 }
 
 export const findMatchingAreaCode = (phoneNumber: string): string =>
