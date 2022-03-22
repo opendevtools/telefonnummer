@@ -55,7 +55,7 @@
     "@types/jest": "27.4.1",
     "@types/jest-in-case": "1.0.5",
     "@types/node": "17.0.21",
-    "@typescript-eslint/eslint-plugin": "5.13.0",
+    "@typescript-eslint/eslint-plugin": "5.16.0",
     "@typescript-eslint/parser": "5.13.0",
     "all-contributors-cli": "6.20.0",
     "cross-env": "7.0.3",
