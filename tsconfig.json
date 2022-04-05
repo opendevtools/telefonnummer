@@ -4,9 +4,8 @@
     "declarationDir": "dist",
     "downlevelIteration": true,
     "esModuleInterop": true,
-    "importHelpers": true,
     "lib": ["es7", "esnext"],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -19,7 +18,6 @@
     "removeComments": true,
     "sourceMap": false,
     "strict": true,
-    "strictNullChecks": true,
     "stripInternal": true,
     "target": "es5"
   },
