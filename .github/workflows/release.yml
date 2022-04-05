@@ -88,6 +88,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Download dependencies
+        uses: bahmutov/npm-install@v1
+
       - name: Build project
         run: npm run build
 
