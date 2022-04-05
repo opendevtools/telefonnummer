@@ -15,8 +15,6 @@
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json && rollup -c && rimraf compiled",
     "typecheck": "tsc --noEmit",
-    "prepare": "npm run build && husky install",
-    "precommit": "lint-staged",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
