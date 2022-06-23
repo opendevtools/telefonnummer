@@ -3,7 +3,7 @@ import filesize from 'rollup-plugin-filesize'
 import replace from 'rollup-plugin-replace'
 import resolve from 'rollup-plugin-node-resolve'
 import sourceMaps from 'rollup-plugin-sourcemaps'
-import { uglify } from 'rollup-plugin-uglify'
+import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 const input = `./compiled/index.js`
@@ -30,16 +30,7 @@ const getUMDConfig = ({ env }) => ({
     commonjs(),
     sourceMaps(),
     env === 'production' && filesize(),
-    env === 'production' &&
-      uglify({
-        output: { comments: false },
-        compress: {
-          keep_infinity: true,
-          pure_getters: true,
-        },
-        warnings: true,
-        toplevel: false,
-      }),
+    env === 'production' && terser(),
   ],
 })
 
