@@ -41,7 +41,7 @@
   "homepage": "https://github.com/opendevtools/telefonnummer#readme",
   "devDependencies": {
     "@types/node": "18.0.0",
-    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.29.0",
     "all-contributors-cli": "6.20.0",
     "cross-env": "7.0.3",
