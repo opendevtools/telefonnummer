@@ -50,7 +50,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "prettier": "2.7.1",
     "rimraf": "3.0.2",
-    "rollup": "2.77.2",
+    "rollup": "2.78.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-filesize": "9.1.2",
     "rollup-plugin-node-resolve": "5.2.0",
