@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/opendevtools/telefonnummer#readme",
   "devDependencies": {
-    "@types/node": "18.7.5",
+    "@types/node": "18.7.11",
     "@typescript-eslint/eslint-plugin": "5.33.1",
     "@typescript-eslint/parser": "5.33.1",
     "all-contributors-cli": "6.20.0",
