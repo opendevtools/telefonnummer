@@ -4,8 +4,9 @@ import replace from 'rollup-plugin-replace'
 import resolve from 'rollup-plugin-node-resolve'
 import sourceMaps from 'rollup-plugin-sourcemaps'
 import { terser } from 'rollup-plugin-terser'
-import pkg from './package.json'
+import { readFileSync } from 'fs'
 
+const pkg = JSON.parse(readFileSync('package.json', { encoding: 'utf8' }))
 const input = `./compiled/index.js`
 
 const getUMDConfig = ({ env }) => ({
