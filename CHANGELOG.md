@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/opendevtools/telefonnummer/compare/v2.2.0...v2.3.0) (2023-09-12)
+
+
+### Features
+
+* use bun for tests and bundling ([9be493f](https://github.com/opendevtools/telefonnummer/commit/9be493f331486573f1c6fec46a8d22f95f45a827))
+
 # [2.2.0](https://github.com/opendevtools/telefonnummer/compare/v2.1.1...v2.2.0) (2020-11-05)
 
 
