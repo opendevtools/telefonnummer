@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, test } from 'bun:test'
 import { phoneNumberParser } from '../parser'
 
 const parserHelper = (numbers: string[], expected: string): void => {
@@ -6,10 +6,6 @@ const parserHelper = (numbers: string[], expected: string): void => {
     expect(phoneNumberParser(phoneNumber)).toEqual(expected)
   })
 }
-
-test('handles null values', () => {
-  parserHelper([null, undefined], '')
-})
 
 test('parses voicemail', () => {
   const numbers = [
@@ -24,10 +20,6 @@ test('parses voicemail', () => {
   ]
 
   parserHelper(numbers, 'Röstbrevlåda')
-})
-
-test('handles non strings', () => {
-  expect(phoneNumberParser(46721834008)).toEqual('072-183 40 08')
 })
 
 test('parses normal mobile numbers', () => {

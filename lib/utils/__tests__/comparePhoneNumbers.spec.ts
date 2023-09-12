@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, test } from 'bun:test'
 import { phoneNumbersAreEqual } from '../comparePhoneNumbers'
 
 test('returns true if phone numbers are equal', () => {

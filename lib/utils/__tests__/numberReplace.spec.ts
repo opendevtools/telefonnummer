@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, test } from 'bun:test'
 import { numberReplace } from '../numberReplace'
 
 test('handles undefined type (long implicitly)', () => {

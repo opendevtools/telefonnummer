@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest'
+import { expect, test } from 'bun:test'
 import { validator } from '../validator'
 
 test.each([
@@ -6,7 +6,7 @@ test.each([
   ['0701ggas234asdf567d'],
   ['070abcdefb'],
   ['abcdefg'],
-])('errors for non-numerical inputs', (phoneNumber) => {
+])('errors for non-numerical input %s', (phoneNumber) => {
   expect(validator(phoneNumber)).toBe(false)
 })
 
