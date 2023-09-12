@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/opendevtools/telefonnummer/compare/v2.3.0...v2.3.1) (2023-09-12)
+
+
+### Bug Fixes
+
+* only include built files in npm publish ([95324e0](https://github.com/opendevtools/telefonnummer/commit/95324e041d1fc505dd6baef732b14b1565e86d68))
+
 # [2.3.0](https://github.com/opendevtools/telefonnummer/compare/v2.2.0...v2.3.0) (2023-09-12)
 
 
