@@ -1,10 +1,10 @@
 import { expect, test } from 'bun:test'
 import { areaCodeDigitCount } from '../areaCodeDigitCount'
 
-const numberHelper = (numbers: string[], expected: number): void => {
-  numbers.forEach((phoneNumber) => {
+const numberHelper = (numbers: string[], expected: 2 | 3 | 4): void => {
+  for (const phoneNumber of numbers) {
     expect(areaCodeDigitCount(phoneNumber)).toEqual(expected)
-  })
+  }
 }
 
 test('should return two for 08', () => {

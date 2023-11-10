@@ -10,7 +10,7 @@ export interface ParserOptions {
 
 export const phoneNumberParser = (
   phoneNumber: string,
-  options: ParserOptions = { internationalized: false, separator: '-' }
+  options: ParserOptions = { internationalized: false, separator: '-' },
 ): string => {
   const { separator } = options
 
@@ -27,21 +27,27 @@ export const phoneNumberParser = (
   const shortNumberParse = standardFormat(firstDigits(3)('short'), options)
   const numberLength = normalized.length
 
+  console.time('parser')
   const voicemail = ['147', '222', '333', '888'].reduce<string[]>(
-    (acc, curr) => [...acc, curr, `0${curr}`],
-    []
+    (acc, curr) => {
+      acc.push(curr, `0${curr}`)
+
+      return acc
+    },
+    [],
   )
+  console.timeEnd('parser')
 
   // Voicemail
   if (numberLength <= 4 && voicemail.includes(normalized)) {
     return 'Röstbrevlåda'
   }
 
+  // Stockholm
+  const type = numberLength === 10 ? 'tenDigit' : 'long'
+
   switch (areaCode) {
     case 2:
-      // Stockholm
-      const type = numberLength === 10 ? 'tenDigit' : 'long'
-
       return replacer(firstDigits(numberLength === 8 ? 2 : 3)(type), options)
     case 3:
       // Mobile and three digit area codes

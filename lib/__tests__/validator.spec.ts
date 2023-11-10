@@ -97,5 +97,5 @@ test.each([
   'checks validity of phone numbers, but only allow mobile numbers',
   ([phoneNumber, valid]) => {
     expect(validator(phoneNumber, { onlyMobile: true })).toBe(valid)
-  }
+  },
 )

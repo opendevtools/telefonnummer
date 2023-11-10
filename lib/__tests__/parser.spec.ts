@@ -2,9 +2,9 @@ import { expect, test } from 'bun:test'
 import { phoneNumberParser } from '../parser'
 
 const parserHelper = (numbers: string[], expected: string): void => {
-  numbers.forEach((phoneNumber) => {
+  for (const phoneNumber of numbers) {
     expect(phoneNumberParser(phoneNumber)).toEqual(expected)
-  })
+  }
 }
 
 test('parses voicemail', () => {
@@ -71,21 +71,21 @@ test('parses numbers with complex internationalization', () => {
 
 test('can parse with custom separator', () => {
   expect(phoneNumberParser('031446572', { separator: ' <> ' })).toEqual(
-    '031 <> 44 65 72'
+    '031 <> 44 65 72',
   )
   expect(phoneNumberParser('0701234567', { separator: ' ' })).toEqual(
-    '070 123 45 67'
+    '070 123 45 67',
   )
   expect(phoneNumberParser('0701234567', { separator: ':' })).toEqual(
-    '070:123 45 67'
+    '070:123 45 67',
   )
   expect(phoneNumberParser('050012345', { separator: ' ' })).toEqual(
-    '0500 123 45'
+    '0500 123 45',
   )
 })
 
 test('can parse as international number', () => {
   expect(phoneNumberParser('0701234567', { internationalized: true })).toEqual(
-    '+46701234567'
+    '+46701234567',
   )
 })

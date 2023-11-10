@@ -1,7 +1,7 @@
 import { expect, test } from 'bun:test'
 import telefonnummer, {
-  areaCode,
   areEqual,
+  areaCode,
   normalize,
   numberingArea,
   parse,
