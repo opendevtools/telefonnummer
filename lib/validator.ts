@@ -29,7 +29,7 @@ export const validator = (
   const normalized = normalize(phoneNumber)
   const areaCodeDigits = areaCodeDigitCount(normalized)
 
-  if (normalized.substr(0, 2) === '07') {
+  if (normalized.substring(0, 2) === '07') {
     return /^07(0|2|3|6|9)\d{7}$/.test(normalized)
   }
 

@@ -8,7 +8,7 @@ export const numberReplace =
     const parsedNumber = phoneNumber.replace(regexReplace, numberParse)
 
     if (options.internationalized) {
-      return `+46${normalize(parsedNumber).substr(1)}`
+      return `+46${normalize(parsedNumber).substring(1)}`
     }
 
     return parsedNumber
