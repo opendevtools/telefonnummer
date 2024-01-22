@@ -5,7 +5,9 @@ export const areaCodeDigitCount = (phoneNumber: string): 2 | 3 | 4 => {
 
   if (validTwo.test(phoneNumber)) {
     return 2
-  } else if (validThree.test(phoneNumber)) {
+  }
+
+  if (validThree.test(phoneNumber)) {
     return 3
   }
 
