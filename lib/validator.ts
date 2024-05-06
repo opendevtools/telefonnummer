@@ -10,7 +10,9 @@ const findNumbersByLength = (
   digits: number,
   trailingDigits: number,
 ): RegExp => {
-  const areaCodes = RIKTNUMMER.map((phoneNumber) => parseInt(phoneNumber, 10))
+  const areaCodes = RIKTNUMMER.map((phoneNumber) =>
+    Number.parseInt(phoneNumber, 10),
+  )
     .map((phoneNumber) => `0${phoneNumber.toString()}`)
     .filter((phoneNumber) => phoneNumber.length === digits)
     .join('|')

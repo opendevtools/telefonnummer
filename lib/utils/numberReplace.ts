@@ -1,4 +1,4 @@
-import { ParserOptions } from '../parser'
+import type { ParserOptions } from '../parser'
 import { normalize } from './normalize'
 
 export const numberReplace =
