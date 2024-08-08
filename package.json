@@ -45,7 +45,7 @@
   "homepage": "https://github.com/opendevtools/telefonnummer#readme",
   "devDependencies": {
     "@biomejs/biome": "1.8.1",
-    "bun-types": "1.1.15",
+    "bun-types": "1.1.22",
     "rimraf": "5.0.7",
     "typescript": "5.4.5"
   },
