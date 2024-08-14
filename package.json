@@ -1,6 +1,6 @@
 {
   "name": "@opendevtools/telefonnummer",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Phone number formatter for Swedish phone numbers",
   "main": "dist/index.js",
   "module": "dist/index.js",

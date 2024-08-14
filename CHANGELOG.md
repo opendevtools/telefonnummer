@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/opendevtools/telefonnummer/compare/v2.3.1...v2.3.2) (2024-08-14)
+
+
+### Bug Fixes
+
+* imports matches filenames ([ab368c4](https://github.com/opendevtools/telefonnummer/commit/ab368c4eeb0290d844199a8e0639ab28143b57a3))
+
 ## [2.3.1](https://github.com/opendevtools/telefonnummer/compare/v2.3.0...v2.3.1) (2023-09-12)
 
 
