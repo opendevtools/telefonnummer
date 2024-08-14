@@ -2,8 +2,8 @@
   "name": "@opendevtools/telefonnummer",
   "version": "2.3.1",
   "description": "Phone number formatter for Swedish phone numbers",
-  "main": "dist/telefonnummer.js",
-  "module": "dist/telefonnummer.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
@@ -44,10 +44,10 @@
   },
   "homepage": "https://github.com/opendevtools/telefonnummer#readme",
   "devDependencies": {
-    "@biomejs/biome": "1.8.1",
-    "bun-types": "1.1.15",
-    "rimraf": "5.0.7",
-    "typescript": "5.4.5"
+    "@biomejs/biome": "1.8.3",
+    "bun-types": "1.1.24",
+    "rimraf": "6.0.1",
+    "typescript": "5.5.4"
   },
   "type": "module"
 }
