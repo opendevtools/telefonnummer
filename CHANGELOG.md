@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/opendevtools/telefonnummer/compare/v2.3.2...v2.3.3) (2024-08-14)
+
+
+### Bug Fixes
+
+* type import ([a27fde2](https://github.com/opendevtools/telefonnummer/commit/a27fde26c7336218c3b4f24a18f3ae9f441a274d))
+
 ## [2.3.2](https://github.com/opendevtools/telefonnummer/compare/v2.3.1...v2.3.2) (2024-08-14)
 
 
